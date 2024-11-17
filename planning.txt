@@ -1,0 +1,101 @@
+HOME PAGE
+
+    Banner Section
+        Banner Title 
+        Banner description
+        Banner Video
+
+    Welcome Section
+        title, image, description (Add More)
+
+    Customized Enzymes
+        description
+        title, image, description (Add More)
+
+    Individual Enzymes
+        description
+        title, image, description (Add More)
+
+    Global Events
+        description
+        image
+
+    Upcoming Events
+        description
+
+ABOUT PAGE
+
+    Banner Section
+        Banner Title 
+        Banner description
+        Banner Image
+    
+    About Section
+        title
+        image
+        description
+
+    Tabs Section
+        alias, title, image, description (Add More)
+
+(covers home, about, career, contact)
+en_pages 
+    id
+    name
+    content
+    created_at
+    updated_at
+
+en_news
+   id
+   name
+   image
+   description
+   year
+   created_at
+   updated_at
+
+en_events
+    id
+    name
+    date
+    location
+    booth
+    link
+    image
+    series
+    status
+    created_at
+    updated_at
+
+en_products
+    id
+    name
+    image
+    created_at
+    updated_at
+
+
+----------------
+Planning - 5 Hours
+Application setup - 2 Hours
+10 Language Integration - 12 Hours
+Deployment & Testing - 5 Hours
+2 Admins for 2 websites with switch - 4 Hours
+
+Backend (26 Hours)
+    Dashboard - 2 Hours
+    Pages Management (Home, About, Career, Contact) - 12 Hours (4 Pages)
+    News Management - 4 Hours
+    Event Management - 4 Hours
+    Product Management - 4 Hours
+    
+
+Frontend (25 Hours)
+    integrate all html in laravel - 5 Hours
+    dynamic with multi language - 20 Hours
+
+Approx. 79 Hours (will try to complete between 70 to 80 Hours)
+
+Note :
+Need both products page & Event page html design
