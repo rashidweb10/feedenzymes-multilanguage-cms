@@ -62,43 +62,43 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12">
+                    <div class="col-sm-12 d-none">
                         <hr class="border-3">
                     </div>
-                    <div class="col-sm-4 ps-4">
+                    <div class="col-sm-4 ps-4 d-none">
                         <div class="form-group">
                             <label>Phone Number</label>
                             <input type="text" class="form-control" maxlength="50" name="phone"
                                 value="{{$settings->phone}}" required>
                         </div>
                     </div>
-                    <div class="col-sm-4 ps-4">
+                    <div class="col-sm-4 ps-4 d-none">
                         <div class="form-group">
                             <label>Whatsapp Number</label>
                             <input type="text" class="form-control" maxlength="50" name="whatsapp_phone"
                                 value="{{$settings->whatsapp_phone}}" required>
                         </div>
                     </div>
-                    <div class="col-sm-4 ps-4">
+                    <div class="col-sm-4 ps-4 d-none">
                         <div class="form-group">
                             <label>Email</label>
                             <input type="email" class="form-control" maxlength="50" name="email"
                                 value="{{$settings->email}}" required>
                         </div>
                     </div>
-                    <div class="col-sm-12 ps-4">
+                    <div class="col-sm-12 ps-4 d-none">
                         <div class="form-group">
                             <label>Google Map Link</label>
                             <input type="url" class="form-control" name="google_map" value="{{$settings->google_map}}"
                                 required>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group d-none">
                         <label>Address</label>
                         <textarea rows="3" name="address" class="form-control"
                             required>{{$settings->address}}</textarea>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group d-none">
                         <label>About</label>
                         <textarea name="about" class="form-control text-editor"
                             required>{!! $settings->about !!}</textarea>
@@ -106,14 +106,14 @@
                     <div class="col-sm-12">
                         <hr class="border-3">
                     </div>
-                    <div class="col-sm-12">
+                    <div class="col-sm-6">
                         <div class="form-group">
                             <label>Author Name</label>
                             <input type="text" class="form-control" maxlength="50" name="author_name"
                                 value="{{$settings->author_name}}" required>
                         </div>
                     </div>
-                    <div class="col-sm-12">
+                    <div class="col-sm-6">
                         <div class="form-group">
                             <label>Author Link</label>
                             <input type="url" class="form-control" maxlength="50" name="author_link"

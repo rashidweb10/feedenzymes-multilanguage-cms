@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\App;
+
 if (!function_exists('languageSession')) {
     function languageSession() {
         return session('language', 'en');
@@ -20,5 +22,17 @@ if (!function_exists('languageList')) {
             'vi' => 'Vietnamese', 
             'id' => 'Indonesia'
         ];
+    }
+}
+
+if (!function_exists('getCurrentLocale')) {
+    /**
+     * Get the current locale.
+     *
+     * @return string
+     */
+    function getCurrentLocale()
+    {
+        return App::getLocale();
     }
 }

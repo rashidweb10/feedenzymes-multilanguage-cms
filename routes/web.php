@@ -30,26 +30,16 @@ Route::get('/storage-link', function () {
     return "Storage link created!";
 });
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
+Route::group(['prefix' => '{locale?}', 'middleware' => 'language', 'where' => ['locale' => implode('|', array_keys(getLanguageList()))]], function () {
+    Route::get('/', function () {
+        return view('frontend.pages.home.index');
+    });
 
-Route::get('/', function () {
-    return view('frontend.pages.home.index');
+    Route::get('/about-us', function () {
+        return view('frontend.pages.about.index');
+    }); 
+    
+    Route::get('/contact-us', function () {
+        return view('frontend.pages.contact.index');
+    });   
 });
-
-Route::get('/about-us', function () {
-    return view('frontend.pages.about.index');
-});
-Route::get('/contact-us', function () {
-    return view('frontend.pages.contact.index');
-});
-
-Route::get('/category/{slug}', function () {
-    return view('frontend.pages.category.index');
-});
-
-Route::get('/order', [IndexController::class, 'index'])->name('order.index');
-Route::get('/order/getProducts/{category_id}', [IndexController::class, 'getProducts'])->name('order.getProducts');
-Route::get('/order/getVariation/{product_id}', [IndexController::class, 'getVariation'])->name('order.getVariation');
-Route::post('/order/submitForm', [IndexController::class, 'submitForm'])->name('order.submit');
