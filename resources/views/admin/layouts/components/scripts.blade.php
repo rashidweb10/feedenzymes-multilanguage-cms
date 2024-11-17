@@ -88,6 +88,13 @@ function initValidate(selector) {
         },
         unhighlight: function(element, errorClass, validClass) {
             $(element).removeClass('is-invalid');
+        },       // Custom rule to handle the 'required' class
+        rules: {
+            test: {
+                required: function(element) {
+                    return $(element).hasClass('required');
+                }
+            }
         }
     });
 }
@@ -218,7 +225,7 @@ $(document).ready(function() {
 function initTextEditor() {
     tinymce.init({
         selector: '.text-editor',
-        height: 400, // Set the desired height
+        height: 300, // Set the desired height
         plugins: 'anchor advlist autolink lists link image charmap preview hr pagebreak ' +
                 'searchreplace wordcount visualblocks code fullscreen insertdatetime media nonbreaking ' +
                 'save table directionality emoticons template paste help',
