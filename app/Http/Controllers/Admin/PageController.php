@@ -25,7 +25,7 @@ class PageController extends Controller
     public function store(Request $request)
     {
         // // Handle the file upload and store the file path
-        // $path = $request->file('image')->store('images', 'public');
+        // $path = $request->file('image')->store('uploads/'.languageSession(), 'public');
 
         // //variation
         // $variation = [];
@@ -73,7 +73,7 @@ class PageController extends Controller
     //     $page = Page::findOrFail($id);
     
     //     if ($request->hasFile('image')) {
-    //         $path = $request->file('image')->store('images', 'public');
+    //         $path = $request->file('image')->store('uploads/'.languageSession(), 'public');
     //         $page->image = '/storage/' . $path;
     //     }
 
@@ -105,7 +105,7 @@ class PageController extends Controller
         if($id == 1){ 
             $page = Page::findOrFail($id);
             if ($request->hasFile('banner_image')) {
-                $path = $request->file('banner_image')->store('images', 'public');
+                $path = $request->file('banner_image')->store('uploads/'.languageSession(), 'public');
                 $banner_image = '/storage/' . $path;
             }else{
                 $banner_image = $request->old_banner_image;
@@ -122,14 +122,14 @@ class PageController extends Controller
             $page = Page::findOrFail($id);
 
             if ($request->hasFile('banner_image')) {
-                $path = $request->file('banner_image')->store('images', 'public');
+                $path = $request->file('banner_image')->store('uploads/'.languageSession(), 'public');
                 $banner_image = '/storage/' . $path;
             }else{
                 $banner_image = $request->old_banner_image;
             }    
             
             if ($request->hasFile('about_image')) {
-                $path = $request->file('about_image')->store('images', 'public');
+                $path = $request->file('about_image')->store('uploads/'.languageSession(), 'public');
                 $about_image = '/storage/' . $path;
             }else{
                 $about_image = $request->old_about_image;
@@ -139,7 +139,7 @@ class PageController extends Controller
             foreach($request->tab_index as $index):
 
                 if ($request->hasFile('tab_image.'.$index)) {
-                    $path = $request->file('tab_image.'.$index)->store('images', 'public');
+                    $path = $request->file('tab_image.'.$index)->store('uploads/'.languageSession(), 'public');
                     $tab_image = '/storage/' . $path;
                 } else {
                     $tab_image = $request->old_tab_image[$index] ?? null;
@@ -169,7 +169,7 @@ class PageController extends Controller
         }elseif($id == 3){ 
             $page = Page::findOrFail($id);
             if ($request->hasFile('banner_image')) {
-                $path = $request->file('banner_image')->store('images', 'public');
+                $path = $request->file('banner_image')->store('uploads/'.languageSession(), 'public');
                 $banner_image = '/storage/' . $path;
             }else{
                 $banner_image = $request->old_banner_image;
@@ -185,7 +185,7 @@ class PageController extends Controller
         }elseif($id == 4){ 
             $page = Page::findOrFail($id);
             if ($request->hasFile('banner_image')) {
-                $path = $request->file('banner_image')->store('images', 'public');
+                $path = $request->file('banner_image')->store('uploads/'.languageSession(), 'public');
                 $banner_image = '/storage/' . $path;
             }else{
                 $banner_image = $request->old_banner_image;
