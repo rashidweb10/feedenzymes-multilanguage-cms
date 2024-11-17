@@ -17,19 +17,19 @@ class SettingSeeder extends Seeder
     {
         $insert = [
             [
-                'app_name'         => 'Parijat Foods',
+                'app_name'         => 'Feedenzymes',
                 'app_logo'         => 'assets/admin/img/app/logo.png',
                 'timezone'         => 'Asia/Kolkata',
                 'author_name'      => 'Maptek Softwares',
-                'author_link'      => 'https://google.com/',
+                'author_link'      => 'https://maptek.online/',
                 'ui_mode'          => 'light',
                 'sidebar_collapse' => 'off',
-                'phone'            => '+91-9999999999',
-                'whatsapp_phone'   => '+91-9999999999',
+                'phone'            => '-',
+                'whatsapp_phone'   => '-',
                 'google_map'       => 'https://google.com/',
                 'email'            => 'app@gmail.com',
-                'address'          => 'India',
-                'about'            => 'Loremipsum',
+                'address'          => '-',
+                'about'            => '-',
                 'created_at'       => date('Y-m-d H:i:s'),
                 'updated_at'       => date('Y-m-d H:i:s'),
             ]
