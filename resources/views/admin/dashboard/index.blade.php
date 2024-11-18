@@ -7,7 +7,7 @@
 
 
 @section('main.content')
-<div class="col-md-4 col-sm-6 col-12">
+{{--<div class="col-md-4 col-sm-6 col-12">
     <div class="info-box">
         <span class="info-box-icon bg-success">
             <i class="fa-solid fa-shopping-cart"></i>
@@ -39,7 +39,7 @@
             <span class="info-box-number">{{$enquiryCount}}</span>
         </div>
     </div>
-</div>
+</div>--}}
 @endsection
 
 @section('main.script')

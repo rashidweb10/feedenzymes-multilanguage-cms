@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\EnquiryController;
 use App\Http\Controllers\Admin\LanguageController;
 use App\Http\Controllers\Admin\PageController;
+use App\Http\Controllers\Admin\NewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,7 +83,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth']], function(){
     Route::Resource('enquiries', EnquiryController::class);    
 });
 
-//products module
+//pages module
 Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth']], function(){ 
     Route::Resource('pages', PageController::class);    
+});
+
+//news module
+Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth']], function(){ 
+    Route::Resource('news', NewsController::class);    
 });

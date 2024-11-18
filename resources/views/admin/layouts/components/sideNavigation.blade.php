@@ -40,8 +40,14 @@ $uri3 = Request::segment(2);
                         <i class="fa-solid fa fa-pencil"></i>
                         <p>{{__('label.pages')}}</p>
                     </a>
-                </li>                
+                </li>   
                 <li class="nav-item">
+                    <a href="{{route('news.index')}}" class="nav-link @if($uri2 == 'news') active @endif">
+                        <i class="fa-solid fa fa-newspaper"></i>
+                        <p>{{__('label.news')}}</p>
+                    </a>
+                </li>                             
+                {{--<li class="nav-item">
                     <a href="{{route('products.index')}}" class="nav-link @if($uri2 == 'products') active @endif">
                         <i class="fa-solid fa-shopping-cart"></i>
                         <p>{{__('label.products')}}</p>
@@ -60,7 +66,7 @@ $uri3 = Request::segment(2);
                         <p>{{__('label.enquiries')}}</p>
                     </a>
                 </li>
-                <!--<li class="nav-item">
+                <li class="nav-item">
                     <a href="{{url(route('admin.settings'))}}" class="nav-link @if($uri2 == 'settings') active @endif">
                         <i class="fa-solid fa-gear"></i>
                         <p>{{__('label.settings')}}</p>
@@ -71,7 +77,7 @@ $uri3 = Request::segment(2);
                         <i class="fa-solid fa-eraser"></i>
                         <p>{{__('label.c_cache')}}</p>
                     </a>
-                </li>-->
+                </li>--}}
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

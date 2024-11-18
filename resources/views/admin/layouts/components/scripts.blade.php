@@ -211,7 +211,9 @@ function closeConfirmModel() {
 <!--Datatable Scripts Start-->
 <script>
 $(document).ready(function() {
-    $('.datatable').DataTable();
+    $('.datatable').DataTable({
+    "order": [[0, 'asc']] 
+});
 });
 </script>
 <!--Datatable Scripts End-->

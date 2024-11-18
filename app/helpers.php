@@ -35,4 +35,16 @@ if (!function_exists('getCurrentLocale')) {
     {
         return App::getLocale();
     }
+
+    if (!function_exists('getYears')) {
+        function getYears() {
+            return range(2000, 2050);
+        }
+    }    
+
+    if (!function_exists('formatDateTime')) {
+        function formatDateTime($dateTime) {
+            return \Carbon\Carbon::parse($dateTime)->format('j M Y g:iA');
+        }
+    }    
 }

@@ -29,4 +29,5 @@ return [
     'products'=> 'Products',
     'enquiries'=> 'Enquiries',
     'pages'=> 'Pages',
+    'news'=> 'Events',
 ];
