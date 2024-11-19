@@ -30,4 +30,5 @@ return [
     'enquiries'=> 'Enquiries',
     'pages'=> 'Pages',
     'news'=> 'Events',
+    'productions'=> 'Products',
 ];

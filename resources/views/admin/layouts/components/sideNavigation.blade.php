@@ -46,7 +46,13 @@ $uri3 = Request::segment(2);
                         <i class="fa-solid fa fa-newspaper"></i>
                         <p>{{__('label.news')}}</p>
                     </a>
-                </li>                             
+                </li>   
+                <li class="nav-item">
+                    <a href="{{route('the-products.index')}}" class="nav-link @if($uri2 == 'the-products') active @endif">
+                        <i class="fa-brands fa-product-hunt"></i>
+                        <p>{{__('label.productions')}}</p>
+                    </a>
+                </li>                                          
                 {{--<li class="nav-item">
                     <a href="{{route('products.index')}}" class="nav-link @if($uri2 == 'products') active @endif">
                         <i class="fa-solid fa-shopping-cart"></i>

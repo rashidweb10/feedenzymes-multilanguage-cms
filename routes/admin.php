@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\EnquiryController;
 use App\Http\Controllers\Admin\LanguageController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\ProductionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -91,4 +92,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth']], function(){
 //news module
 Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth']], function(){ 
     Route::Resource('news', NewsController::class);    
+});
+
+//productions module
+Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth']], function(){ 
+    Route::Resource('the-products', ProductionController::class);    
 });

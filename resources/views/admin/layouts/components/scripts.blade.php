@@ -198,6 +198,7 @@ $(document).ready(function() {
 });
 
 function closeModel() {
+    tinymce.remove();
     //$('.modal .modal-body').html('');
     //$('.modal .modal-title').html('');
 }
@@ -221,13 +222,18 @@ $(document).ready(function() {
 <!--Summernote Scripts Start-->
 <script>
 $(document).ready(function() {
-    initTextEditor();
+    //initTextEditor();
 });
 
 function initTextEditor() {
     tinymce.init({
         selector: '.text-editor',
         height: 300, // Set the desired height
+        //valid_elements: '*[*]', // Allows all HTML elements and attributes
+        //extended_valid_elements: 'p[style|class],a[href|target],strong,br',
+        //cleanup: false, // Prevent TinyMCE from cleaning up your HTML
+        //forced_root_block: false, // Avoid wrapping content in <p> if not needed
+        //entity_encoding: 'raw', // Preserve HTML entities as-is        
         plugins: 'anchor advlist autolink lists link image charmap preview hr pagebreak ' +
                 'searchreplace wordcount visualblocks code fullscreen insertdatetime media nonbreaking ' +
                 'save table directionality emoticons template paste help',
