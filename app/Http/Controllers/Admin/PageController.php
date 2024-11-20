@@ -109,11 +109,21 @@ class PageController extends Controller
                 $banner_image = '/storage/' . $path;
             }else{
                 $banner_image = $request->old_banner_image;
+            }  
+            
+            if ($request->hasFile('gevent_image')) {
+                $path = $request->file('gevent_image')->store('uploads/'.languageSession(), 'public');
+                $gevent_image = '/storage/' . $path;
+            }else{
+                $gevent_image = $request->old_gevent_image;
             }            
             $contents = [
                 'banner_title' => $request->banner_title,
                 'banner_image' => $banner_image,
                 'banner_description' => $request->banner_description,         
+                'gevent_image' => $gevent_image,
+                'gevent_description' => $request->gevent_description,  
+                'uevent_description' => $request->uevent_description,       
             ];
             $page->contents = json_encode($contents);
             $page->save(); 

@@ -21,36 +21,16 @@
                     <thead>
                         <tr>
                             <th>Sr No</th>
-                            <th>Year</th>
-                            <th>Title</th>
-                            <th>Image</th>
-                            
-                            <th>Series</th>
-                            <th>Status</th>
-                            <th>Created at</th>
-                            <th>Updated at</th>
+                            <th>Name</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($news as $index => $row)
+                        @foreach($productions as $index => $row)
                         <tr>
-                            <td>{{ $index + 1 }}</td>
-                            <td>{{$row->year}}</td>
-                            <td>{{$row->name}}</td>
-                            <td>
-                                <a target="_blank" href="{{asset($row->image)}}">
-                                    <img src="{{asset($row->image)}}" class="img-thumbnail" style="width: 40px; height: 40px; object-fit: cover;">
-                                </a>
-                            </td>
-                            
-                            <td>{{$row->series}}</td>
-                            <td>
-                                <span class="badge @if($row->status == 'active') bg-success @else bg-danger @endif">{{ucfirst($row->status)}}</span>
-                            </td>
-                            <td>{{formatDateTime($row->created_at)}}</td>
-                            <td>{{formatDateTime($row->updated_at)}}</td>
-                            <td>
+                            <td width="10%">{{ $index + 1 }}</td>
+                            <td width="80%">{{$row->name}}</td>
+                            <td width="10%">
                                 <button onclick="largeModal('{{url(route('the-products.edit', $row->id))}}', 'Edit {{$row->name}}')"
                                     class="btn btn-sm btn-primary"><i class="fa-solid fa-pencil"></i> Edit</button>
                             </td>

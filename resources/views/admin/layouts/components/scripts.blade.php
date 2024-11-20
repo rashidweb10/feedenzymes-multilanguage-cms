@@ -228,6 +228,7 @@ $(document).ready(function() {
 function initTextEditor() {
     tinymce.init({
         selector: '.text-editor',
+        statusbar: false,
         height: 300, // Set the desired height
         //valid_elements: '*[*]', // Allows all HTML elements and attributes
         //extended_valid_elements: 'p[style|class],a[href|target],strong,br',
@@ -237,10 +238,10 @@ function initTextEditor() {
         plugins: 'anchor advlist autolink lists link image charmap preview hr pagebreak ' +
                 'searchreplace wordcount visualblocks code fullscreen insertdatetime media nonbreaking ' +
                 'save table directionality emoticons template paste help',
-        toolbar: 'undo redo | formatselect | bold italic underline strikethrough | ' +
-                'alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | ' +
-                'link anchor image media | forecolor backcolor removeformat | ' +
-                'preview code fullscreen | insertdatetime table emoticons | help',
+        // toolbar: 'undo redo | formatselect | bold italic underline strikethrough | ' +
+        //         'alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | ' +
+        //         'link anchor image media | forecolor backcolor removeformat | ' +
+        //         'preview code fullscreen | insertdatetime table emoticons | help',
         setup: function(editor) {
             editor.on('change', function() {
                 editor.save(); // Ensure changes are saved

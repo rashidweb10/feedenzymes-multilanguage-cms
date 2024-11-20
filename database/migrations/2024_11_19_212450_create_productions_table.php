@@ -18,10 +18,7 @@ return new class extends Migration
                 $table->id();
                 $table->string('name');
                 $table->string('image')->nullable();           
-                $table->longText('contents')->nullable();
-                $table->year('year')->nullable();  
-                $table->string('series')->nullable();
-                $table->string('status')->default('active');
+                $table->longText('contents')->nullable();  
                 $table->timestamps();
             });
         }         

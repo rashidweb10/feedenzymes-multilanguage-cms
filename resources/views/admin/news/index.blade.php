@@ -29,7 +29,6 @@
                             <th>Year</th>
                             <th>Title</th>
                             <th>Image</th>
-                            
                             <th>Series</th>
                             <th>Status</th>
                             <th>Created at</th>

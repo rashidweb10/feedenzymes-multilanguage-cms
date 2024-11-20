@@ -1,15 +1,18 @@
 @php
-   $content = json_decode($page->contents);
+    $content = json_decode($page->contents);
     $bannerTitle = $content->banner_title ?? null;
     $bannerImage = $content->banner_image ?? null;
     $bannerDescription = $content->banner_description ?? null;   
+    $geventImage = $content->gevent_image ?? null;
+    $geventDescription = $content->gevent_description ?? null;   
+    $ueventDescription = $content->uevent_description ?? null;   
 @endphp
 <form id="edit-page" action="{{route('pages.update', $page->id)}}" method="POST">
     @csrf
     @method('PUT')
     <div class="row">
         <div class="col-md-12">
-           <h5 class="text-info">Banner Section</h5>
+           <h5 class="text-info mt-3">Banner Section</h5>
         </div>
         <div class="col-sm-4">
             <div class="form-group">
@@ -40,26 +43,46 @@
                      required="">{{$bannerDescription}}</textarea>
             </div>
         </div>  
-        <div class="col-md-12">
-           <h5 class="text-info">About Section</h5>
+        {{--<div class="col-md-12">
+           <h5 class="text-info mt-3">About Section</h5>
            <p>Please update tabs section available in about page</p>
         </div>   
         <div class="col-md-12">
-           <h5 class="text-info">Customize Product Section</h5>
+           <h5 class="text-info mt-3">Customize Product Section</h5>
            <p>Please update customize product page</p>
         </div>  
         <div class="col-md-12">
-           <h5 class="text-info">Individual Product Section</h5>
+           <h5 class="text-info mt-3">Individual Product Section</h5>
            <p>Please update customize product page</p>
-        </div>    
+        </div>--}}    
         <div class="col-md-12">
-           <h5 class="text-info">Global Events Section</h5>
-           <p>Please update events page</p>
-        </div>       
+           <h5 class="text-info mt-3">Global Events Section</h5>
+        </div> 
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label>Video @if(!empty($geventImage)) <a target="_blank" href="{{asset($geventImage)}}">View</a>
+                    @endif</label>
+                <input name="gevent_image" type="file" class="form-control" accept="video/*">
+                <input value="{{$geventImage}}" name="old_gevent_image" type="hidden">
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label>Description</label>
+                <textarea name="gevent_description" class="form-control text-editor" minlength="3"
+                     required="">{{$geventDescription}}</textarea>
+            </div>
+        </div>        
         <div class="col-md-12">
-           <h5 class="text-info">Upcoming Events Section</h5>
-           <p>Please update events page</p>
-        </div>                          
+           <h5 class="text-info mt-3">Upcoming Events Section</h5>
+        </div> 
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label>Description</label>
+                <textarea name="uevent_description" class="form-control text-editor" minlength="3"
+                     required="">{{$ueventDescription}}</textarea>
+            </div>
+        </div>                                 
         <div class="col-sm-12">
             <div class="form-group text-right">
                 <button type="submit" class="btn btn-sm btn-block btn-primary">Update</button>

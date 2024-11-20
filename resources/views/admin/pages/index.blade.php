@@ -26,7 +26,7 @@
                     <thead>
                         <tr>
                             <th width="10%">Sr No</th>
-                            <th width="80%">Page Name</th>
+                            <th width="80%">Name</th>
                             <th width="10%">Action</th>
                         </tr>
                     </thead>

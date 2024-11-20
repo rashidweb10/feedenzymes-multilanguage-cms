@@ -10,36 +10,18 @@ class ProductionController extends Controller
 {
     public function index()
     {
-        $news = Production::all();
-        return view('admin.productions.index', compact('news'));
+        $productions = Production::all();
+        return view('admin.productions.index', compact('productions'));
     }
 
     public function create()
     {
-        return view('admin.productions.create');
+
     }   
 
     public function store(Request $request)
     {
-        // $news = new News();
-        // if ($request->hasFile('image')) {
-        //     $path = $request->file('image')->store('uploads/' . languageSession(), 'public');
-        //     $image = '/storage/' . $path;
-        // }
-        
-        // $news->name = $request->name; 
-        // $news->image = $image; 
-        // $news->contents = json_encode([]);
-        // $news->year = $request->year;
-        // $news->series = $request->series;
-        // $news->status = $request->status;
-        // $news->save();
 
-        // $response = array(
-        //     'status' => true,
-        //     'notification' => 'Created successfully.'
-        //   );
-        // return $response;
     }
 
     public function show($id)
@@ -49,29 +31,52 @@ class ProductionController extends Controller
 
     public function edit($id)
     {
-        $news = Production::find($id);
-        return view('admin.productions.edit', compact('news'));
+        $production = Production::find($id);
+        return view('admin.productions.edit', compact('production'));
     }   
 
     public function update(Request $request, $id)
     {
-        $news = Production::findOrFail($id); 
+        $production = Production::findOrFail($id); 
+        
+        $p1_data = [];
+        foreach($request->p1_index as $index => $key):
 
-        if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('uploads/' . languageSession(), 'public');
-            $image = '/storage/' . $path;
-        } else {
-            $image = $news->image; 
-        }
+            $p1_data[] = [
+                'p1_title' => $request->p1_title[$index],
+                'p1_status' => $request->p1_status[$index],
+                'p1_description' => $request->p1_description[$index]
+            ];
+        endforeach;
+
+        $p2_data = [];
+        foreach($request->p2_index as $index => $key):
+
+            $p2_data[] = [
+                'p2_title' => $request->p2_title[$index],
+                'p2_status' => $request->p2_status[$index],
+                'p2_description' => $request->p2_description[$index]
+            ];
+        endforeach;     
         
-        $news->name = $request->name;
-        $news->image = $image;
-        $news->contents = json_encode([]);
-        $news->year = $request->year;
-        $news->status = $request->status;
-        $news->series = $request->series;
-        
-        $news->save(); 
+        $p3_data = [];
+        foreach($request->p3_index as $index => $key):
+
+            $p3_data[] = [
+                'p3_title' => $request->p3_title[$index],
+                'p3_status' => $request->p3_status[$index],
+                'p3_description' => $request->p3_description[$index]
+            ];
+        endforeach;        
+
+        $contents = [
+            'nspEnzymes' => $p1_data,        
+            'digestiveEnzymes' => $p2_data,       
+            'phytaseEnzymes' => $p3_data         
+        ];
+
+        $production->contents = json_encode($contents);
+        $production->save();
     
         $response = [
             'status' => true,
