@@ -78,6 +78,7 @@ Command: toastr["warning"]('{{Session::get("nWarning")}}', "Warning");
 <script>
 function initValidate(selector) {
     $(selector).validate({
+        ignore: [], // Include hidden fields in validation
         errorElement: 'div',
         errorPlacement: function(error, element) {
             error.addClass('invalid-feedback');
@@ -89,14 +90,18 @@ function initValidate(selector) {
         unhighlight: function(element, errorClass, validClass) {
             $(element).removeClass('is-invalid');
         },       // Custom rule to handle the 'required' class
-        rules: {
+        /*rules: {
             test: {
                 required: function(element) {
                     return $(element).hasClass('required');
                 }
             }
-        }
+        }*/
     });
+
+    $(selector).find('select, input[type="file"]').on('change', function () {
+        $(this).valid();
+    });    
 }
 </script>
 <!--jQuery validate End-->
@@ -243,8 +248,10 @@ function initTextEditor() {
         //         'link anchor image media | forecolor backcolor removeformat | ' +
         //         'preview code fullscreen | insertdatetime table emoticons | help',
         setup: function(editor) {
-            editor.on('change', function() {
-                editor.save(); // Ensure changes are saved
+            editor.on('change keyup', function() {
+                editor.save(); // Sync content back to the <textarea>
+                $(editor.getElement()).valid(); // Trigger validation on the <textarea>
+                console.log(editor.getElement());
             });
         }
     });    

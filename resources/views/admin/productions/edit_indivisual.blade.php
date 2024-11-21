@@ -20,12 +20,12 @@
                         <div class="row" id="p1-{{ $index }}">                       
                             <div class="form-group col-md-3">
                                 <input type="hidden" name="p1_index[]" value="{{ $index }}">
-                                <input type="text" name="p1_title[]" value="{{ $row->p1_title }}" class="form-control"
-                                placeholder="Title" required>
-                                <select name="p1_status[]" class="form-control mt-2" required>
+                                <select name="p1_status[]" class="form-control mb-2">
                                     <option value="active" {{ $row->p1_status == 'active' ? 'selected' : '' }}>Active</option>
                                     <option value="inactive" {{ $row->p1_status == 'inactive' ? 'selected' : '' }}>Inactive</option>
-                                </select>                  
+                                </select>                                
+                                <input type="text" name="p1_title[]" value="{{ $row->p1_title }}" class="form-control"
+                                placeholder="Title" required>                  
                             </div>                      
                             <div class="form-group col-md-8">
                                 <textarea name="p1_description[]" class="form-control text-editor" minlength="3"
@@ -41,12 +41,12 @@
                     <div class="row" id="p1-0">                       
                         <div class="form-group col-md-3">
                             <input type="hidden" name="p1_index[]" value="0">
-                            <input type="text" name="p1_title[]" value="" class="form-control"
-                            placeholder="Title" required>
-                            <select name="p1_status[]" class="form-control mt-2" required>
+                            <select name="p1_status[]" class="form-control mb-2">
                                 <option value="active" >Active</option>
                                 <option value="inactive">Inactive</option>
                             </select>                             
+                            <input type="text" name="p1_title[]" value="" class="form-control"
+                            placeholder="Title" required>                            
                         </div>                    
                         <div class="form-group col-md-8">
                             <textarea name="p1_description[]" class="form-control text-editor" minlength="3"
@@ -77,12 +77,12 @@
                         <div class="row" id="p2-{{ $index }}">                       
                             <div class="form-group col-md-3">
                                 <input type="hidden" name="p2_index[]" value="{{ $index }}">
-                                <input type="text" name="p2_title[]" value="{{ $row->p2_title }}" class="form-control"
-                                placeholder="Title" required>
-                                <select name="p2_status[]" class="form-control mt-2" required>
+                                <select name="p2_status[]" class="form-control mb-2">
                                     <option value="active" {{ $row->p2_status == 'active' ? 'selected' : '' }}>Active</option>
                                     <option value="inactive" {{ $row->p2_status == 'inactive' ? 'selected' : '' }}>Inactive</option>
-                                </select>                  
+                                </select>                                
+                                <input type="text" name="p2_title[]" value="{{ $row->p2_title }}" class="form-control"
+                                placeholder="Title" required>                 
                             </div>                      
                             <div class="form-group col-md-8">
                                 <textarea name="p2_description[]" class="form-control text-editor" minlength="3"
@@ -98,12 +98,12 @@
                     <div class="row" id="p2-0">                       
                         <div class="form-group col-md-3">
                             <input type="hidden" name="p2_index[]" value="0">
-                            <input type="text" name="p2_title[]" value="" class="form-control"
-                            placeholder="Title" required>
-                            <select name="p2_status[]" class="form-control mt-2" required>
+                            <select name="p2_status[]" class="form-control mb-2">
                                 <option value="active" >Active</option>
                                 <option value="inactive">Inactive</option>
-                            </select>                             
+                            </select>                            
+                            <input type="text" name="p2_title[]" value="" class="form-control"
+                            placeholder="Title" required>                             
                         </div>                    
                         <div class="form-group col-md-8">
                             <textarea name="p2_description[]" class="form-control text-editor" minlength="3"
@@ -133,12 +133,12 @@
                         <div class="row" id="p3-{{ $index }}">                       
                             <div class="form-group col-md-3">
                                 <input type="hidden" name="p3_index[]" value="{{ $index }}">
-                                <input type="text" name="p3_title[]" value="{{ $row->p3_title }}" class="form-control"
-                                placeholder="Title" required>
-                                <select name="p3_status[]" class="form-control mt-2" required>
+                                <select name="p3_status[]" class="form-control mb-2">
                                     <option value="active" {{ $row->p3_status == 'active' ? 'selected' : '' }}>Active</option>
                                     <option value="inactive" {{ $row->p3_status == 'inactive' ? 'selected' : '' }}>Inactive</option>
-                                </select>                  
+                                </select>                               
+                                <input type="text" name="p3_title[]" value="{{ $row->p3_title }}" class="form-control"
+                                placeholder="Title" required>                  
                             </div>                      
                             <div class="form-group col-md-8">
                                 <textarea name="p3_description[]" class="form-control text-editor" minlength="3"
@@ -154,12 +154,12 @@
                     <div class="row" id="p3-0">                       
                         <div class="form-group col-md-3">
                             <input type="hidden" name="p3_index[]" value="0">
-                            <input type="text" name="p3_title[]" value="" class="form-control"
-                            placeholder="Title" required>
-                            <select name="p3_status[]" class="form-control mt-2" required>
+                            <select name="p3_status[]" class="form-control mb-2">
                                 <option value="active" >Active</option>
                                 <option value="inactive">Inactive</option>
-                            </select>                             
+                            </select>                            
+                            <input type="text" name="p3_title[]" value="" class="form-control"
+                            placeholder="Title" required>                            
                         </div>                    
                         <div class="form-group col-md-8">
                             <textarea name="p3_description[]" class="form-control text-editor" minlength="3"
@@ -212,12 +212,12 @@ $(document).ready(function() {
             `<div class="row" id="p1-${variationIndex}">            
                 <div class="form-group col-md-3">
                     <input type="hidden" name="p1_index[]" value="${variationIndex}">
-                    <input type="text" name="p1_title[]" value="" class="form-control"
-                    placeholder="Title" required>
-                    <select name="p1_status[]" class="form-control mt-2" required>
+                    <select name="p1_status[]" class="form-control mb-2">
                         <option value="active" >Active</option>
                         <option value="inactive">Inactive</option>
-                    </select>                     
+                    </select>                   
+                    <input type="text" name="p1_title[]" value="" class="form-control"
+                    placeholder="Title" required>                     
                 </div>                     
                 <div class="form-group col-md-8">
                     <textarea name="p1_description[]" class="form-control text-editor" minlength="3"
@@ -250,12 +250,12 @@ $(document).ready(function() {
             `<div class="row" id="p2-${variationIndex}">            
                 <div class="form-group col-md-3">
                     <input type="hidden" name="p2_index[]" value="${variationIndex}">
-                    <input type="text" name="p2_title[]" value="" class="form-control"
-                    placeholder="Title" required>
-                    <select name="p2_status[]" class="form-control mt-2" required>
+                    <select name="p2_status[]" class="form-control mb-2">
                         <option value="active" >Active</option>
                         <option value="inactive">Inactive</option>
                     </select>                     
+                    <input type="text" name="p2_title[]" value="" class="form-control"
+                    placeholder="Title" required>                    
                 </div>                     
                 <div class="form-group col-md-8">
                     <textarea name="p2_description[]" class="form-control text-editor" minlength="3"
@@ -287,12 +287,12 @@ $(document).ready(function() {
             `<div class="row" id="p3-${variationIndex}">            
                 <div class="form-group col-md-3">
                     <input type="hidden" name="p3_index[]" value="${variationIndex}">
-                    <input type="text" name="p3_title[]" value="" class="form-control"
-                    placeholder="Title" required>
-                    <select name="p3_status[]" class="form-control mt-2" required>
+                    <select name="p3_status[]" class="form-control mb-2">
                         <option value="active" >Active</option>
                         <option value="inactive">Inactive</option>
                     </select>                     
+                    <input type="text" name="p3_title[]" value="" class="form-control"
+                    placeholder="Title" required>                    
                 </div>                     
                 <div class="form-group col-md-8">
                     <textarea name="p3_description[]" class="form-control text-editor" minlength="3"
