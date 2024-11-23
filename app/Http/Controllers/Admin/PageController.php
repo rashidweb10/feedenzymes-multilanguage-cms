@@ -116,7 +116,62 @@ class PageController extends Controller
                 $gevent_image = '/storage/' . $path;
             }else{
                 $gevent_image = $request->old_gevent_image;
-            }            
+            }  
+            
+            //ABOUT SECTION
+            $p1_data = [];
+            foreach($request->p1_index as $index => $d):
+
+                if ($request->hasFile('p1_image.'.$index)) {
+                    $path = $request->file('p1_image.'.$index)->store('uploads/'.languageSession(), 'public');
+                    $p1_image = '/storage/' . $path;
+                } else {
+                    $p1_image = $request->old_p1_image[$index] ?? null;
+                }
+
+                $p1_data[] = [
+                    'p1_title' => $request->p1_title[$index],
+                    'p1_image' => $p1_image,
+                    'p1_description' => $request->p1_description[$index]
+                ];
+            endforeach; 
+            
+            //Custom Product
+            $p2_data = [];
+            foreach($request->p2_index as $index => $d):
+        
+                if ($request->hasFile('p2_image.'.$index)) {
+                    $path = $request->file('p2_image.'.$index)->store('uploads/'.languageSession(), 'public');
+                    $p2_image = '/storage/' . $path;
+                } else {
+                    $p2_image = $request->old_p2_image[$index] ?? null;
+                }
+        
+                $p2_data[] = [
+                    'p2_title' => $request->p2_title[$index],
+                    'p2_image' => $p2_image,
+                    'p2_description' => $request->p2_description[$index]
+                ];
+            endforeach; 
+            
+            $p3_data = [];
+            foreach($request->p3_index as $index => $d):
+        
+                if ($request->hasFile('p3_image.'.$index)) {
+                    $path = $request->file('p3_image.'.$index)->store('uploads/'.languageSession(), 'public');
+                    $p3_image = '/storage/' . $path;
+                } else {
+                    $p3_image = $request->old_p3_image[$index] ?? null;
+                }
+        
+                $p3_data[] = [
+                    'p3_title' => $request->p3_title[$index],
+                    'p3_image' => $p3_image,
+                    'p3_description' => $request->p3_description[$index]
+                ];
+            endforeach;             
+
+
             $contents = [
                 'banner_title' => $request->banner_title,
                 'banner_image' => $banner_image,
@@ -124,6 +179,11 @@ class PageController extends Controller
                 'gevent_image' => $gevent_image,
                 'gevent_description' => $request->gevent_description,  
                 'uevent_description' => $request->uevent_description,       
+                'p1_data' => $p1_data,       
+                'p2_desc' => $request->p2_desc,       
+                'p2_data' => $p2_data,   
+                'p3_desc' => $request->p3_desc,    
+                'p3_data' => $p3_data,       
             ];
             $page->contents = json_encode($contents);
             $page->save(); 
@@ -146,7 +206,7 @@ class PageController extends Controller
             } 
             
             $tabs_data = [];
-            foreach($request->tab_index as $index):
+            foreach($request->tab_index as $index => $d):
 
                 if ($request->hasFile('tab_image.'.$index)) {
                     $path = $request->file('tab_image.'.$index)->store('uploads/'.languageSession(), 'public');
