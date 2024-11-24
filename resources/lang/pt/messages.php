@@ -1,5 +1,30 @@
 <?php
 
 return [
-    // Add your translations here for Português
+    'power' => 'Poder das Enzimas Lumis',
+    'latest_news' => 'Últimas Notícias',
+    'tagline' => 'Vamos criar soluções inovadoras',
+    'welcome_message' => 'Bem-vindo ao Lumis Enzymes',
+    'customized_enzymes' => 'Enzimas Personalizadas',
+    'individual_enzymes' => 'Enzimas Individuais',
+    'global_events' => 'Eventos Globais',
+    'upcoming_events' => 'Próximos Eventos',
+    'more_events' => 'Mais Eventos',
+    'events' => 'Eventos',
+    'company' => 'Empresa',
+    'products' => 'Produtos',
+    'enzymes' => 'Enzimas',
+    'news' => 'Notícias',
+    'careers' => 'Carreiras',
+    'contact_us' => 'Contate-Nos',
+    'footer_text' => 'Lumis Biotech Private Limited.',
+    'business_process' => 'Processo de Negócios',
+    'history' => 'História',
+    'about_us' => 'Sobre Nós',
+    'customized' => 'Personalizado',
+    'individual' => 'Individual',
+    'sitemap' => 'Mapa do Site',
+    'terms_of_use' => 'Termos de Uso',
+    'privacy_statement' => 'Declaração de Privacidade',
+    'differentiation' => 'A diferenciação chave de oferecer soluções enzimáticas inovadoras e personalizadas destacou a Lumis de outros fornecedores convencionais de enzimas.',
 ];

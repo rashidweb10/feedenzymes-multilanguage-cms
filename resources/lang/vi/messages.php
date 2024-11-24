@@ -1,5 +1,30 @@
 <?php
 
 return [
-    // Add your translations here for Vietnamese
+    'power' => 'Sức mạnh của Enzyme Lumis',
+    'latest_news' => 'Tin tức mới nhất',
+    'tagline' => 'Hãy tạo ra các giải pháp sáng tạo',
+    'welcome_message' => 'Chào mừng đến với Lumis Enzymes',
+    'customized_enzymes' => 'Enzyme Tùy chỉnh',
+    'individual_enzymes' => 'Enzyme Cá nhân',
+    'global_events' => 'Sự kiện Toàn cầu',
+    'upcoming_events' => 'Sự kiện Sắp tới',
+    'more_events' => 'Nhiều Sự kiện hơn',
+    'events' => 'Sự kiện',
+    'company' => 'Công ty',
+    'products' => 'Sản phẩm',
+    'enzymes' => 'Enzyme',
+    'news' => 'Tin tức',
+    'careers' => 'Nghề nghiệp',
+    'contact_us' => 'Liên hệ với chúng tôi',
+    'footer_text' => 'Lumis Biotech Private Limited.',
+    'business_process' => 'Quy trình Kinh doanh',
+    'history' => 'Lịch sử',
+    'about_us' => 'Về chúng tôi',
+    'customized' => 'Tùy chỉnh',
+    'individual' => 'Cá nhân',
+    'sitemap' => 'Sơ đồ Trang web',
+    'terms_of_use' => 'Điều khoản Sử dụng',
+    'privacy_statement' => 'Tuyên bố Bảo mật',
+    'differentiation' => 'Sự khác biệt chính trong việc cung cấp các giải pháp enzyme sáng tạo và tùy chỉnh đã giúp Lumis khác biệt với các nhà cung cấp enzyme thông thường khác.',
 ];

@@ -1,5 +1,30 @@
 <?php
 
 return [
-    // Add your translations here for 한국어
+    'power' => 'Lumis 효소의 힘',
+    'latest_news' => '최신 뉴스',
+    'tagline' => '혁신적인 솔루션을 만들어 봅시다',
+    'welcome_message' => 'Lumis Enzymes에 오신 것을 환영합니다',
+    'customized_enzymes' => '맞춤형 효소',
+    'individual_enzymes' => '개별 효소',
+    'global_events' => '글로벌 이벤트',
+    'upcoming_events' => '다가오는 이벤트',
+    'more_events' => '더 많은 이벤트',
+    'events' => '이벤트',
+    'company' => '회사',
+    'products' => '제품',
+    'enzymes' => '효소',
+    'news' => '뉴스',
+    'careers' => '채용',
+    'contact_us' => '문의하기',
+    'footer_text' => 'Lumis Biotech Private Limited.',
+    'business_process' => '비즈니스 프로세스',
+    'history' => '역사',
+    'about_us' => '회사 소개',
+    'customized' => '맞춤형',
+    'individual' => '개별적인',
+    'sitemap' => '사이트맵',
+    'terms_of_use' => '이용 약관',
+    'privacy_statement' => '개인정보 보호정책',
+    'differentiation' => '혁신적이고 맞춤형 효소 솔루션을 제공하는 핵심 차별화는 Lumis를 다른 전통적인 효소 공급업체와 차별화합니다.',
 ];

@@ -1,5 +1,30 @@
 <?php
 
 return [
-    // Add your translations here for Türk
+    'power' => 'Lumis Enzimlerinin Gücü',
+    'latest_news' => 'Son Haberler',
+    'tagline' => 'Yenilikçi çözümler sunalım',
+    'welcome_message' => 'Lumis Enzymes\'e hoş geldiniz',
+    'customized_enzymes' => 'Özelleştirilmiş Enzimler',
+    'individual_enzymes' => 'Bireysel Enzimler',
+    'global_events' => 'Küresel Etkinlikler',
+    'upcoming_events' => 'Yaklaşan Etkinlikler',
+    'more_events' => 'Daha Fazla Etkinlik',
+    'events' => 'Etkinlikler',
+    'company' => 'Şirket',
+    'products' => 'Ürünler',
+    'enzymes' => 'Enzimler',
+    'news' => 'Haberler',
+    'careers' => 'Kariyer',
+    'contact_us' => 'Bize Ulaşın',
+    'footer_text' => 'Lumis Biotech Private Limited.',
+    'business_process' => 'İş Süreci',
+    'history' => 'Tarihçe',
+    'about_us' => 'Hakkımızda',
+    'customized' => 'Özelleştirilmiş',
+    'individual' => 'Bireysel',
+    'sitemap' => 'Site Haritası',
+    'terms_of_use' => 'Kullanım Şartları',
+    'privacy_statement' => 'Gizlilik Bildirimi',
+    'differentiation' => 'Yenilikçi ve özelleştirilmiş enzim çözümleri sunma konusundaki temel farklılık, Lumis’i diğer geleneksel enzim tedarikçilerinden ayırmıştır.',
 ];

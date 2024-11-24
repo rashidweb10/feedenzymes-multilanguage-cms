@@ -31,9 +31,10 @@ Route::get('/storage-link', function () {
 });
 
 Route::group(['prefix' => '{locale?}', 'middleware' => 'language', 'where' => ['locale' => implode('|', array_keys(getLanguageList()))]], function () {
-    Route::get('/', function () {
-        return view('frontend.pages.home.index');
-    });
+    // Route::get('/', function () {
+    //     return view('frontend.pages.home.index');
+    // });
+    Route::get('/', [IndexController::class, 'index'])->name('home');
 
     Route::get('/about-us', function () {
         return view('frontend.pages.about.index');

@@ -1,5 +1,30 @@
 <?php
 
 return [
-    // Add your translations here for Русский
+    'power' => 'Сила ферментов Lumis',
+    'latest_news' => 'Последние новости',
+    'tagline' => 'Давайте создавать инновационные решения',
+    'welcome_message' => 'Добро пожаловать в Lumis Enzymes',
+    'customized_enzymes' => 'Индивидуальные ферменты',
+    'individual_enzymes' => 'Персонализированные ферменты',
+    'global_events' => 'Мировые события',
+    'upcoming_events' => 'Предстоящие события',
+    'more_events' => 'Больше событий',
+    'events' => 'События',
+    'company' => 'Компания',
+    'products' => 'Продукция',
+    'enzymes' => 'Ферменты',
+    'news' => 'Новости',
+    'careers' => 'Карьера',
+    'contact_us' => 'Свяжитесь с нами',
+    'footer_text' => 'Lumis Biotech Private Limited.',
+    'business_process' => 'Бизнес-процесс',
+    'history' => 'История',
+    'about_us' => 'О нас',
+    'customized' => 'Персонализированный',
+    'individual' => 'Индивидуальный',
+    'sitemap' => 'Карта сайта',
+    'terms_of_use' => 'Условия использования',
+    'privacy_statement' => 'Политика конфиденциальности',
+    'differentiation' => 'Ключевое отличие в предложении новых и персонализированных решений с ферментами выделяет Lumis среди других традиционных поставщиков ферментов.',
 ];

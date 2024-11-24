@@ -1,5 +1,30 @@
 <?php
 
 return [
-    // Add your translations here for Indonesia
+    'power' => 'Kekuatan Enzim Lumis',
+    'latest_news' => 'Berita Terkini',
+    'tagline' => 'Mari buat solusi inovatif',
+    'welcome_message' => 'Selamat datang di Lumis Enzymes',
+    'customized_enzymes' => 'Enzim Kustom',
+    'individual_enzymes' => 'Enzim Individu',
+    'global_events' => 'Acara Global',
+    'upcoming_events' => 'Acara Mendatang',
+    'more_events' => 'Lebih Banyak Acara',
+    'events' => 'Acara',
+    'company' => 'Perusahaan',
+    'products' => 'Produk',
+    'enzymes' => 'Enzim',
+    'news' => 'Berita',
+    'careers' => 'Karir',
+    'contact_us' => 'Hubungi Kami',
+    'footer_text' => 'Lumis Biotech Private Limited.',
+    'business_process' => 'Proses Bisnis',
+    'history' => 'Sejarah',
+    'about_us' => 'Tentang Kami',
+    'customized' => 'Disesuaikan',
+    'individual' => 'Individu',
+    'sitemap' => 'Peta Situs',
+    'terms_of_use' => 'Syarat Penggunaan',
+    'privacy_statement' => 'Pernyataan Privasi',
+    'differentiation' => 'Diferensiasi utama dalam menawarkan solusi enzim yang inovatif dan disesuaikan telah membuat Lumis menonjol dibandingkan pemasok enzim konvensional lainnya.',
 ];

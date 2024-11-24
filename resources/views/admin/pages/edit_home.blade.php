@@ -44,8 +44,8 @@
         <div class="col-sm-12">
             <div class="form-group">
                 <label>Description</label>
-                <textarea name="banner_description" class="form-control text-editor" minlength="3"
-                     required="">{{$bannerDescription}}</textarea>
+                <textarea name="banner_description" class="form-control" minlength="3"
+                     required="" rows="4">{{$bannerDescription}}</textarea>
             </div>
         </div>  
         <div class="col-md-12">
@@ -70,7 +70,7 @@
                             </div>                                 
                             <div class="form-group col-md-5">
                                 <textarea name="p1_description[]" class="form-control" minlength="3"
-                                        required="" rows="3">{{ $row->p1_description }}</textarea>
+                                        required="" rows="4">{{ $row->p1_description }}</textarea>
                             </div>                        
                             <div class="form-group col-md-1">
                                 <button type="button" class="btn btn-block btn-danger remove-p1"
@@ -92,7 +92,7 @@
                         </div>                                 
                         <div class="form-group col-md-5">
                             <textarea name="p1_description[]" class="form-control" minlength="3"
-                                    required="" rows="3"></textarea>
+                                    required="" rows="4"></textarea>
                         </div>                        
                         <div class="form-group col-md-1">
                             <button type="button" class="btn btn-block btn-danger remove-p1"
@@ -113,8 +113,8 @@
         <div class="col-sm-12">
             <div class="form-group">
                 <label>Description</label>
-                <textarea name="p2_desc" class="form-control text-editor" minlength="3"
-                     required="">{{$p2_desc}}</textarea>
+                <textarea name="p2_desc" class="form-control" minlength="3"
+                     required="" rows="4">{{$p2_desc}}</textarea>
             </div>
         </div>          
         <div class="col-sm-12">
@@ -137,7 +137,7 @@
                             </div>                                 
                             <div class="form-group col-md-5">
                                 <textarea name="p2_description[]" class="form-control" minlength="3"
-                                        required="" rows="3">{{ $row->p2_description }}</textarea>
+                                        required="" rows="4">{{ $row->p2_description }}</textarea>
                             </div>                        
                             <div class="form-group col-md-1">
                                 <button type="button" class="btn btn-block btn-danger remove-p2"
@@ -159,7 +159,7 @@
                         </div>                                 
                         <div class="form-group col-md-5">
                             <textarea name="p2_description[]" class="form-control" minlength="3"
-                                    required="" rows="3"></textarea>
+                                    required="" rows="4"></textarea>
                         </div>                        
                         <div class="form-group col-md-1">
                             <button type="button" class="btn btn-block btn-danger remove-p2"
@@ -180,8 +180,8 @@
         <div class="col-sm-12">
             <div class="form-group">
                 <label>Description</label>
-                <textarea name="p3_desc" class="form-control text-editor" minlength="3"
-                     required="">{{$p3_desc}}</textarea>
+                <textarea name="p3_desc" class="form-control" minlength="3"
+                     required="" rows="4">{{$p3_desc}}</textarea>
             </div>
         </div>         
         <div class="col-sm-12">
@@ -204,7 +204,7 @@
                             </div>                                 
                             <div class="form-group col-md-5">
                                 <textarea name="p3_description[]" class="form-control" minlength="3"
-                                        required="" rows="3">{{ $row->p3_description }}</textarea>
+                                        required="" rows="4">{{ $row->p3_description }}</textarea>
                             </div>                        
                             <div class="form-group col-md-1">
                                 <button type="button" class="btn btn-block btn-danger remove-p3"
@@ -226,7 +226,7 @@
                         </div>                                 
                         <div class="form-group col-md-5">
                             <textarea name="p3_description[]" class="form-control" minlength="3"
-                                    required="" rows="3"></textarea>
+                                    required="" rows="4"></textarea>
                         </div>                        
                         <div class="form-group col-md-1">
                             <button type="button" class="btn btn-block btn-danger remove-p3"
@@ -256,8 +256,8 @@
         <div class="col-sm-12">
             <div class="form-group">
                 <label>Description</label>
-                <textarea name="gevent_description" class="form-control text-editor" minlength="3"
-                     required="">{{$geventDescription}}</textarea>
+                <textarea name="gevent_description" class="form-control" minlength="3"
+                     required="" rows="4">{{$geventDescription}}</textarea>
             </div>
         </div>        
         <div class="col-md-12">
@@ -266,8 +266,8 @@
         <div class="col-sm-12">
             <div class="form-group">
                 <label>Description</label>
-                <textarea name="uevent_description" class="form-control text-editor" minlength="3"
-                     required="">{{$ueventDescription}}</textarea>
+                <textarea name="uevent_description" class="form-control" minlength="3"
+                     required="" rows="4">{{$ueventDescription}}</textarea>
             </div>
         </div>                                 
         <div class="col-sm-12">
@@ -314,7 +314,7 @@ $(document).ready(function() {
                 </div>                                     
                 <div class="form-group col-md-5">
                     <textarea name="p1_description[]" class="form-control" minlength="3"
-                            required=""></textarea>
+                            required="" rows="4"></textarea>
                 </div>                        
                 <div class="form-group col-md-1">
                     <button type="button" class="btn btn-block btn-danger remove-p1"
@@ -352,7 +352,7 @@ $(document).ready(function() {
                 </div>                                     
                 <div class="form-group col-md-5">
                     <textarea name="p2_description[]" class="form-control" minlength="3"
-                            required=""></textarea>
+                            required="" rows="4"></textarea>
                 </div>                        
                 <div class="form-group col-md-1">
                     <button type="button" class="btn btn-block btn-danger remove-p2"
@@ -390,7 +390,7 @@ $(document).ready(function() {
                 </div>                                     
                 <div class="form-group col-md-5">
                     <textarea name="p3_description[]" class="form-control" minlength="3"
-                            required=""></textarea>
+                            required="" rows="4"></textarea>
                 </div>                        
                 <div class="form-group col-md-1">
                     <button type="button" class="btn btn-block btn-danger remove-p3"

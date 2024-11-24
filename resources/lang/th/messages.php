@@ -1,5 +1,30 @@
 <?php
 
 return [
-    // Add your translations here for ไทย
+    'power' => 'พลังของ Lumis Enzymes',
+    'latest_news' => 'ข่าวล่าสุด',
+    'tagline' => 'มาสร้างสรรค์นวัตกรรมกันเถอะ',
+    'welcome_message' => 'ยินดีต้อนรับสู่ Lumis Enzymes',
+    'customized_enzymes' => 'เอนไซม์ที่ปรับแต่งได้',
+    'individual_enzymes' => 'เอนไซม์เฉพาะบุคคล',
+    'global_events' => 'กิจกรรมระดับโลก',
+    'upcoming_events' => 'กิจกรรมที่จะเกิดขึ้น',
+    'more_events' => 'กิจกรรมเพิ่มเติม',
+    'events' => 'กิจกรรม',
+    'company' => 'บริษัท',
+    'products' => 'ผลิตภัณฑ์',
+    'enzymes' => 'เอนไซม์',
+    'news' => 'ข่าวสาร',
+    'careers' => 'อาชีพ',
+    'contact_us' => 'ติดต่อเรา',
+    'footer_text' => 'Lumis Biotech Private Limited.',
+    'business_process' => 'กระบวนการทางธุรกิจ',
+    'history' => 'ประวัติ',
+    'about_us' => 'เกี่ยวกับเรา',
+    'customized' => 'ปรับแต่ง',
+    'individual' => 'รายบุคคล',
+    'sitemap' => 'แผนผังเว็บไซต์',
+    'terms_of_use' => 'ข้อกำหนดการใช้งาน',
+    'privacy_statement' => 'นโยบายความเป็นส่วนตัว',
+    'differentiation' => 'ความแตกต่างที่สำคัญของการนำเสนอโซลูชันเอนไซม์ที่เป็นนวัตกรรมและปรับแต่งได้ทำให้ Lumis แตกต่างจากผู้จำหน่ายเอนไซม์ทั่วไป.',
 ];
