@@ -1,5 +1,5 @@
 <?php
 
 return [
-    // Add your translations here for English
+    'let_us_make_innovative_solutions' => 'Let us make innovative solutions',
 ];

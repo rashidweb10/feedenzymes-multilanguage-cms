@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+//use Illuminate\Support\Facades\App;
 
 class AdminAuthenticate
 {
@@ -18,6 +19,7 @@ class AdminAuthenticate
      */
     public function handle(Request $request, Closure $next)
     {
+        //App::setLocale('en');
         $auth = Auth::guard('admins')->check();
         if($auth) {
             
