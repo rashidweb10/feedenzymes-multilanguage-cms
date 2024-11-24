@@ -99,3 +99,19 @@ Approx. 79 Hours (will try to complete between 70 to 80 Hours)
 
 Note :
 Need both products page & Event page html design
+
+
+---------------------------
+Improvements
+language validation in form & switch
+header footer menu dynamic when all page dynami in Frontend
+flag image in out server
+topar bar button active feature
+admin dashboard counting
+put proper href in all links
+
+--------------
+Learn 
+Queues
+Unit Testing
+Blade features
