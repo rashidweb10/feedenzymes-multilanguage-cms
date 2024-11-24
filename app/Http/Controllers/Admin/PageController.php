@@ -245,9 +245,10 @@ class PageController extends Controller
                 $banner_image = $request->old_banner_image;
             }            
             $contents = [
-                //'banner_title' => $request->banner_title,
+                'banner_title' => $request->banner_title,
                 'banner_image' => $banner_image,
                 'banner_description' => $request->banner_description,         
+                'page_description' => $request->page_description,         
             ];
             $page->contents = json_encode($contents);
             $page->save();  
@@ -263,7 +264,8 @@ class PageController extends Controller
             $contents = [
                 'banner_title' => $request->banner_title,
                 'banner_image' => $banner_image,
-                'banner_description' => $request->banner_description,         
+                'banner_description' => $request->banner_description,  
+                'page_description' => $request->page_description,          
             ];
             $page->contents = json_encode($contents);
             $page->save(); 

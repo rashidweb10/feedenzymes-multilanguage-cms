@@ -33,7 +33,7 @@
             <div class="form-group">
                 <label>Image @if(!empty($bannerImage)) <a target="_blank" href="{{asset($bannerImage)}}">View</a>
                     @endif</label>
-                <input name="banner_image" type="file" class="form-control" accept="image/*">
+                <input name="banner_image" type="file" class="form-control" accept="image/*" @if(empty($bannerImage)) required @endif>
                 <input value="{{$bannerImage}}" name="old_banner_image" type="hidden">
             </div>
         </div>
@@ -58,7 +58,7 @@
             <div class="form-group">
                 <label>Image @if(!empty($aboutImage)) <a target="_blank" href="{{asset($aboutImage)}}">View</a>
                     @endif</label>
-                <input name="about_image" type="file" class="form-control" accept="image/*">
+                <input name="about_image" type="file" class="form-control" accept="image/*" @if(empty($aboutImage)) required @endif>
                 <input value="{{$aboutImage}}" name="old_about_image" type="hidden">
             </div>
         </div>
