@@ -259,3 +259,32 @@ function initTextEditor() {
 
 </script>
 <!--Summernote Scripts End-->
+
+<script>
+    // Set the key name for localStorage
+    const sessionKey = 'site-open';
+
+    // Function to check if the site is already open in another tab
+    function checkTabOpen() {
+        // If the session key exists in localStorage
+        if (localStorage.getItem(sessionKey)) {
+            // If it does, alert the user
+            document.write("<h2>This site is already open in another tab. Please use the existing tab.</h2>");
+            alert("This site is already open in another tab. Please use the existing tab.");
+            // Close the current tab
+            window.close();
+        } else {
+            // Otherwise, set the session key to mark the site as open
+            localStorage.setItem(sessionKey, 'true');
+
+            // When the tab is closed or refreshed, remove the session key
+            window.onbeforeunload = function() {
+                localStorage.removeItem(sessionKey);
+            };
+        }
+    }
+
+    // Run the check when the page is loaded
+    window.onload = checkTabOpen;
+</script>
+

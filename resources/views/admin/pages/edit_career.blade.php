@@ -8,6 +8,7 @@
 <form id="edit-page" action="{{route('pages.update', $page->id)}}" method="POST">
     @csrf
     @method('PUT')
+    <input type="hidden" name="language" value="{{languageSession()}}">
     <div class="row">
         <div class="col-md-12">
            <h5 class="text-info">Banner Section</h5>

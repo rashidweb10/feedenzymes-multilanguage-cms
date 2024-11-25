@@ -1,6 +1,7 @@
 <form id="edit-news" action="{{route('news.update', $news->id)}}" method="POST">
     @csrf
     @method('PUT')
+    <input type="hidden" name="language" value="{{languageSession()}}">
     <div class="row">
         <div class="col-sm-12">
             <div class="form-group">

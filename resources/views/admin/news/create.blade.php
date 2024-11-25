@@ -1,5 +1,6 @@
 <form id="create-page" action="{{route('news.store')}}" method="POST">
     @csrf
+    <input type="hidden" name="language" value="{{languageSession()}}">
     <div class="row">
         <div class="col-sm-12">
             <div class="form-group">

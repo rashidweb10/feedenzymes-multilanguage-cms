@@ -85,16 +85,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth']], function(){
 });
 
 //pages module
-Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth']], function(){ 
+Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth', "admin.check.language"]], function(){ 
     Route::Resource('pages', PageController::class);    
 });
 
 //news module
-Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth']], function(){ 
+Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth', "admin.check.language"]], function(){ 
     Route::Resource('news', NewsController::class);    
 });
 
 //productions module
-Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth']], function(){ 
+Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth', "admin.check.language"]], function(){ 
     Route::Resource('the-products', ProductionController::class);    
 });

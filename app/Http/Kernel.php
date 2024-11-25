@@ -66,5 +66,6 @@ class Kernel extends HttpKernel
         'admin.auth' => \App\Http\Middleware\AdminAuthenticate::class, //added
         'admin.guest' => \App\Http\Middleware\AdminGuest::class, //added
         'language' => \App\Http\Middleware\LanguageMiddleware::class,
+        'admin.check.language' => \App\Http\Middleware\CheckLanguage::class,
     ];
 }

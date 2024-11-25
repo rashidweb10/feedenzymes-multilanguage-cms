@@ -34,12 +34,13 @@ Route::group(['prefix' => '{locale?}', 'middleware' => 'language', 'where' => ['
     // Route::get('/', function () {
     //     return view('frontend.pages.home.index');
     // });
-    Route::get('/', [IndexController::class, 'index'])->name('home');
+    // Route::get('/about-us', function () {
+    //     return view('frontend.pages.about.index');
+    // }); 
 
-    Route::get('/about-us', function () {
-        return view('frontend.pages.about.index');
-    }); 
-    
+    Route::get('/', [IndexController::class, 'index'])->name('home');
+    Route::get('/about-us', [IndexController::class, 'about'])->name('about');
+
     Route::get('/contact-us', function () {
         return view('frontend.pages.contact.index');
     });   

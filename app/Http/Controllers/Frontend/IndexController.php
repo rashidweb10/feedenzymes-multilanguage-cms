@@ -18,4 +18,9 @@ class IndexController extends Controller
         $events = DB::table(getCurrentLocale()."_news")->where("status", "=", "active")->orderBy('series',"asc")->get();
         return view('frontend.pages.home.index', compact('data','events'));
     }
+
+    function about(){
+        $data = DB::table(getCurrentLocale()."_pages")->where("id", 2)->first();
+        return view('frontend.pages.about.index', compact('data'));
+    }    
 }

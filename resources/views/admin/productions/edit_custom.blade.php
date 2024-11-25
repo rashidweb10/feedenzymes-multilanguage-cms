@@ -12,6 +12,7 @@
 <form id="edit" action="{{route('the-products.update', $production->id)}}" method="POST">
     @csrf
     @method('PUT')
+    <input type="hidden" name="language" value="{{languageSession()}}">
     <div class="row">
         <div class="col-md-12">
            <h5 class="text-info">Why Customize?</h5>
