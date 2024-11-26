@@ -186,6 +186,7 @@ class PageController extends Controller
                 'p3_data' => $p3_data,       
             ];
             $page->contents = json_encode($contents);
+            $page->name = $request->name;
             $page->save(); 
                          
         }elseif($id == 2){
@@ -234,6 +235,7 @@ class PageController extends Controller
             ];
 
             $page->contents = json_encode($contents);
+            $page->name = $request->name;
             $page->save();           
 
         }elseif($id == 3){ 
@@ -251,6 +253,7 @@ class PageController extends Controller
                 'page_description' => $request->page_description,         
             ];
             $page->contents = json_encode($contents);
+            $page->name = $request->name;
             $page->save();  
 
         }elseif($id == 4){ 
@@ -268,6 +271,7 @@ class PageController extends Controller
                 'page_description' => $request->page_description,          
             ];
             $page->contents = json_encode($contents);
+            $page->name = $request->name;
             $page->save(); 
 
         }

@@ -19,7 +19,7 @@
         <div class="col-sm-4">
             <div class="form-group">
                 <label>Name</label>
-                <input readonly value="{{ $page->name }}" name="name" type="text" class="form-control" minlength="3"
+                <input value="{{ $page->name }}" name="name" type="text" class="form-control" minlength="3"
                     maxlength="50" required="">
             </div>
         </div>
@@ -41,8 +41,8 @@
         <div class="col-sm-12">
             <div class="form-group">
                 <label>Description</label>
-                <textarea name="banner_description" class="form-control text-editor" minlength="3"
-                     required="">{{$bannerDescription}}</textarea>
+                <textarea name="banner_description" class="form-control" minlength="3"
+                     required="" rows="4">{{$bannerDescription}}</textarea>
             </div>
         </div>
         <div class="col-md-12">

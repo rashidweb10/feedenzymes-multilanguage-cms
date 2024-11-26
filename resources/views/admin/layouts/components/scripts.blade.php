@@ -30,8 +30,10 @@
 <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
 
 <!-- tinymce JS -->
-<script src="https://cdn.tiny.cloud/1/oao7dvt6bwvrchihs4fuxq9hs7cx1gad1ogh6zjhouovy9ub/tinymce/7.2.1-75/tinymce.min.js">
-</script>
+<!-- <script src="https://cdn.tiny.cloud/1/oao7dvt6bwvrchihs4fuxq9hs7cx1gad1ogh6zjhouovy9ub/tinymce/7.2.1-75/tinymce.min.js">
+</script> -->
+
+<script type="text/javascript" id="tinymce-js" src="https://mcrm.nexgeno.in/assets/plugins/tinymce/tinymce.min.js?v=3.0.5"></script>
 
 
 <!-- AdminLTE App -->

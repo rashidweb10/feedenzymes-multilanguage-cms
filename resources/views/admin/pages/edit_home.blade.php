@@ -23,7 +23,7 @@
         <div class="col-sm-4">
             <div class="form-group">
                 <label>Name</label>
-                <input readonly value="{{ $page->name }}" name="name" type="text" class="form-control" minlength="3"
+                <input value="{{ $page->name }}" name="name" type="text" class="form-control" minlength="3"
                     maxlength="50" required="">
             </div>
         </div>

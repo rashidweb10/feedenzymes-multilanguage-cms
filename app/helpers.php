@@ -48,3 +48,25 @@ if (!function_exists('getCurrentLocale')) {
         }
     }    
 }
+
+if (!function_exists('localized_route')) {
+    /**
+     * Generate a URL with the current locale.
+     *
+     * @param string $name
+     * @param array $parameters
+     * @param bool $absolute
+     * @return string
+     */
+    function localized_route($name, $parameters = [], $absolute = true)
+    {
+        // Get the current locale
+        $locale = app()->getLocale();
+
+        // Merge the locale with other route parameters
+        $parameters = array_merge(['locale' => $locale], $parameters);
+
+        // Generate the route
+        return route($name, $parameters, $absolute);
+    }
+}
