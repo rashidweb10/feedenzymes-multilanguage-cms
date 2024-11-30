@@ -1,5 +1,14 @@
 @php
     $logo = DB::table('settings')->first()->app_logo;
+    $currentLocale = getCurrentLocale(); // Get the current application locale
+    $languages = getLanguageList(); // Fetch the list of languages   
+    
+    $aboutMenu = DB::table(getCurrentLocale()."_pages")->where("id", 2)->first();
+    $aboutContents = json_decode($aboutMenu->contents);
+    $aboutTabsData = $aboutContents->tabs_data ?? [];
+
+    $careerMenu = DB::table(getCurrentLocale()."_pages")->where("id", 3)->first()->name;
+    $contactMenu = DB::table(getCurrentLocale()."_pages")->where("id", 4)->first()->name;
 @endphp
 
 <footer>
@@ -18,53 +27,62 @@
                 <h4 class="footer__title borer-color1">{{ __('messages.company') }}</h4>
                 <div class="footer_border"></div>
                 <ul class="footer-menu">
-                  <li>
-                    <a href="#"><i class="fa-solid fa-caret-right"></i> {{ __('messages.about_us') }}</a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fa-solid fa-caret-right"></i> {{ __('messages.business_process') }}</a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fa-solid fa-caret-right"></i> {{ __('messages.history') }}</a>
-                  </li>
+
+                  @if(!empty($aboutTabsData))
+                    @foreach($aboutTabsData as $index => $row)
+                      <li>
+                        <a href="{{localized_route('about')}}?tab={{$index}}"><i class="fa-solid fa-caret-right"></i> {{$row->tab_alias}}</a>
+                      </li>                      
+                    @endforeach
+                  @endif 
                 </ul>
               </div>
               <div class="footer_link1">
                 <h4 class="footer__title borer-color2">{{ __('messages.enzymes') }}</h4>
                 <div class="footer_border"></div>
                 <ul class="footer-menu">
-                  <li>
-                    <a href="#"><i class="fa-solid fa-caret-right"></i> {{ __('messages.individual') }}</a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fa-solid fa-caret-right"></i> {{ __('messages.customized') }}</a>
-                  </li>
+                <li>
+                  <a href="{{localized_route('indivisual_enzymes')}}">
+                    <i class="fa-solid fa-caret-right"></i> {{ __('messages.individual_enzymes') }}</a>
+                </li>
+                <li>
+                  <a href="{{localized_route('customized_enzymes')}}">
+                    <i class="fa-solid fa-caret-right"></i> {{ __('messages.customized_enzymes') }}</a>
+                </li>                  
                 </ul>
               </div>
               <div class="footer_link1">
                 <h4 class="footer__title borer-color3">{{ __('messages.news') }}</h4>
                 <div class="footer_border"></div>
                 <ul class="footer-menu">
-                  <li>
-                    <a href="#"><i class="fa-solid fa-caret-right"></i> {{ __('messages.global_events') }}</a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fa-solid fa-caret-right"></i> {{ __('messages.upcoming_events') }}</a>
-                  </li>
+                <li>
+                  <a href="{{localized_route('events', ['type'=> 'global'])}}">
+                    <i class="fa-solid fa-caret-right"></i> {{ __('messages.global_events') }}</a>
+                </li>
+                <li>
+                  <a href="{{localized_route('events', ['type'=> 'upcoming'])}}">
+                    <i class="fa-solid fa-caret-right"></i> {{ __('messages.upcoming_events') }}</a>
+                </li>
                 </ul>
               </div>
               <div class="footer_link1">
                 <h4 class="footer__title borer-color4">{{ __('messages.careers') }}</h4>
                 <div class="footer_border"></div>
                 <ul class="footer-menu">
-                 
+                <li>
+                  <a href="{{localized_route('careers')}}">
+                    <i class="fa-solid fa-caret-right"></i> {{ $careerMenu }}</a>
+                </li>                
                 </ul>
               </div>
               <div class="footer_link1">
                 <h4 class="footer__title borer-color4">{{ __('messages.contact_us') }}</h4>
                 <div class="footer_border"></div>
                 <ul class="footer-menu">
-                 
+                <li>
+                  <a href="{{localized_route('contact')}}">
+                    <i class="fa-solid fa-caret-right"></i> {{ $contactMenu }}</a>
+                </li>                 
                 </ul>
               </div>
               <!-- footer nav end-->
@@ -88,7 +106,7 @@
               <p class="footer-copyright mb-0">© {{date("Y")}} {{ __('messages.footer_text') }}</p>
             </div>
             <div class="col-md-4">
-              <ul class="footer-menu1 list-unstyled justify-content-center d-flex">
+              {{--<ul class="footer-menu1 list-unstyled justify-content-center d-flex">
                 <li>
                   <a href="#">{{ __('messages.sitemap') }}</a>
                 </li>
@@ -100,7 +118,7 @@
                 <li>
                   <a href="#">{{ __('messages.privacy_statement') }}</a>
                 </li>
-              </ul>
+              </ul>--}}
             </div>
             <div class="col-md-4">
               <div class="footer-privacy text-end">

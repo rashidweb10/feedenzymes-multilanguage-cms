@@ -81,11 +81,11 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <span>{{ __('messages.products') }}</span> </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <li>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{localized_route('indivisual_enzymes')}}">
                           <i class="fa-solid fa-caret-right"></i> {{ __('messages.individual_enzymes') }}</a>
                       </li>
                       <li>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{localized_route('customized_enzymes')}}">
                           <i class="fa-solid fa-caret-right"></i> {{ __('messages.customized_enzymes') }}</a>
                       </li>
                      
