@@ -15,7 +15,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $pageCount = Page::count();
+        $pageCount = Page::where('id', '!=', 5)->count();
         $newsCount = News::count();
         $productionCount = Production::count();
         return view('admin.dashboard.index', compact('pageCount', 'newsCount', 'productionCount'));

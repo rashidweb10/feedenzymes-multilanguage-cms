@@ -105,10 +105,14 @@ Need both products page & Event page html design
 Improvements
 language validation in form & switch - done
 header footer menu dynamic when all page dynami in Frontend - done
-flag image in out server
+flag image in out server - done
 topar bar button active feature - done
 admin dashboard counting - done
 put proper href in all links - done
+security middlewares
+login switch to other dashboard via api
+complete Testing
+2nd application migration after data feeding
 
 --------------
 Learn 
