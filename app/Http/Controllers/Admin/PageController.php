@@ -274,6 +274,23 @@ class PageController extends Controller
             $page->name = $request->name;
             $page->save(); 
 
+        }elseif($id == 5){ 
+            $page = Page::findOrFail($id);
+            if ($request->hasFile('banner_image')) {
+                $path = $request->file('banner_image')->store('uploads/'.languageSession(), 'public');
+                $banner_image = '/storage/' . $path;
+            }else{
+                $banner_image = $request->old_banner_image;
+            }            
+            $contents = [
+                'banner_title' => $request->banner_title,
+                'banner_image' => $banner_image,
+                'banner_description' => $request->banner_description,           
+            ];
+            $page->contents = json_encode($contents);
+            $page->name = $request->name;
+            $page->save(); 
+
         }
     
         $response = [

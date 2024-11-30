@@ -47,6 +47,11 @@ if (!function_exists('getCurrentLocale')) {
             return \Carbon\Carbon::parse($dateTime)->format('j M Y g:iA');
         }
     }    
+    if (!function_exists('formatDate')) {
+        function formatDate($dateTime) {
+            return \Carbon\Carbon::parse($dateTime)->format('j M Y');
+        }
+    }    
 }
 
 if (!function_exists('localized_route')) {

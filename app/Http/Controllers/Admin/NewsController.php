@@ -30,9 +30,11 @@ class NewsController extends Controller
         $news->name = $request->name; 
         $news->image = $image; 
         $news->contents = json_encode([]);
-        $news->year = $request->year;
+        $news->year = date('Y', strtotime($request->event_date));
         $news->series = $request->series;
         $news->status = $request->status;
+        $news->timestamps = false;
+        $news->created_at = $request->event_date. ' 23:59:59';
         $news->save();
 
         $response = array(
@@ -67,10 +69,11 @@ class NewsController extends Controller
         $news->name = $request->name;
         $news->image = $image;
         $news->contents = json_encode([]);
-        $news->year = $request->year;
+        $news->year = date('Y', strtotime($request->event_date));
         $news->status = $request->status;
         $news->series = $request->series;
-        
+        $news->timestamps = false;
+        $news->created_at = $request->event_date. ' 23:59:59';        
         $news->save(); 
     
         $response = [

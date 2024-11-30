@@ -4,6 +4,7 @@
     $why_image = $content->why_image ?? null;
     $why_description = $content->why_description ?? null;
     $raw_image = $content->raw_image ?? null;  
+    $raw_title = $content->raw_title ?? null;  
     $how_title = $content->how_title ?? null;
     $how_description = $content->how_description ?? null; 
     $you_title = $content->you_title ?? null;
@@ -42,7 +43,14 @@
         <div class="col-md-12">
            <h5 class="text-info mt-3">Enzyme - raw material specificity</h5>
         </div> 
-        <div class="col-sm-12">
+        <div class="col-sm-6">
+        <div class="form-group">
+            <label>Title</label>
+            <input value="{{$raw_title}}" name="raw_title" type="text" class="form-control" minlength="3"
+                maxlength="255" required>
+            </div>        
+        </div>        
+        <div class="col-sm-6">
             <div class="form-group">
                 <label>Image @if(!empty($raw_image)) <a target="_blank" href="{{asset($raw_image)}}">View</a>
                     @endif</label>
@@ -68,7 +76,7 @@
             </div>
         </div>    
         <div class="col-md-12">
-           <h5 class="text-info mt-3">How we Customize?</h5>
+           <h5 class="text-info mt-3">You Benefit</h5>
         </div>  
         <div class="col-sm-12">
             <div class="form-group">

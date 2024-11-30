@@ -19,7 +19,7 @@ class PageSeeder extends Seeder
         $languageList = getLanguageList(); // This assumes the function is accessible here
 
         // Define dummy page names
-        $pageNames = ['home', 'about', 'career', 'contact'];
+        $pageNames = ['home', 'about', 'career', 'contact', 'breadcrumb'];
 
         // Loop through each language
         foreach ($languageList as $lang => $langName) {

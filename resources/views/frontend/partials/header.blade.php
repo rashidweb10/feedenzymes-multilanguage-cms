@@ -6,6 +6,9 @@
     $aboutMenu = DB::table(getCurrentLocale()."_pages")->where("id", 2)->first();
     $aboutContents = json_decode($aboutMenu->contents);
     $aboutTabsData = $aboutContents->tabs_data ?? [];
+
+    $careerMenu = DB::table(getCurrentLocale()."_pages")->where("id", 3)->first()->name;
+    $contactMenu = DB::table(getCurrentLocale()."_pages")->where("id", 4)->first()->name;
 @endphp
   <body>
     <div class="top_baar">
@@ -34,8 +37,8 @@
 			<div class="col-md-6">
 			     <div class="topmenu">
 				   <ul>
-				      <li><a href="">{{ __('messages.careers') }}</a></li>
-				      <li><a class="active" href="">{{ __('messages.contact_us') }}</a></li>
+				      <li><a class="{{ request()->segment(2) == 'careers' ? 'active' : '' }}" href="{{localized_route('careers')}}">{{ $careerMenu }}</a></li>
+				      <li><a class="{{ request()->segment(2) == 'contact-us' ? 'active' : '' }}" href="{{localized_route('contact')}}">{{ $contactMenu }}</a></li>
 				   </ul>
 				 </div>
 			</div>
@@ -92,11 +95,11 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <span>{{ __('messages.events') }}</span> </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <li>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{localized_route('events', ['type'=> 'global'])}}">
                           <i class="fa-solid fa-caret-right"></i> {{ __('messages.global_events') }}</a>
                       </li>
                       <li>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{localized_route('events', ['type'=> 'upcoming'])}}">
                           <i class="fa-solid fa-caret-right"></i> {{ __('messages.upcoming_events') }}</a>
                       </li>
                      

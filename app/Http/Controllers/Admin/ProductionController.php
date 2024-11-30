@@ -59,6 +59,7 @@ class ProductionController extends Controller
                 'why_image' => $why_image,         
                 'why_description' => $request->why_description,         
                 'raw_image' => $raw_image,         
+                'raw_title' => $request->raw_title,         
                 'how_title' => $request->how_title,
                 'how_description' => $request->how_description,   
                 'you_title' => $request->you_title,

@@ -5,11 +5,6 @@
 @php
     $contents = json_decode($data->contents); // Assuming $page contains the database data
 
-    // Banner Section
-    $banner_title = $contents->banner_title ?? '';
-    $banner_image = $contents->banner_image ?? '';
-    $banner_description = $contents->banner_description ?? '';
-
     // About Section
     $about_title = $contents->about_title ?? '';
     $about_image = $contents->about_image ?? '';
@@ -17,25 +12,9 @@
 
     // Tabs Data
     $tabs_data = $contents->tabs_data ?? [];
-    //dd($tabs_data);
 @endphp
-<section class="internal_section">
-  <div class="row justify-content-center align-items-center">
-    <div class="col-md-6">
-      <div class="internal_content">
-        <h3 class="robot_slab fw-normal fs-3 pb-2">{{$banner_title}}</h3>
-        <p data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="aos-init aos-animate">
-          {!! $banner_description !!}
-        </p>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="main_banner_image">
-        <img class="w-100 aos-init aos-animate" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" src="{{asset($banner_image)}}">
-      </div>
-    </div>
-  </div>
-</section>
+
+<x-inner-page-breadcrumb />
 
 <section class="aboutus_section about_sec_right padtop60 padbtm50 marg25 position-relative ">
   <div class="container">

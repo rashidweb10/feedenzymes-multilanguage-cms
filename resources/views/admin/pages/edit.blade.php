@@ -7,4 +7,6 @@
     @include('admin.pages.edit_career')    
 @elseif($page->id == 4)
     @include('admin.pages.edit_contact')  
+    @elseif($page->id == 5)
+    @include('admin.pages.edit_breadcrumb')     
 @endif

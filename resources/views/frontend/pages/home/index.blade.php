@@ -7,7 +7,7 @@
 @php
     //Home page data
     $data = json_decode($data->contents, true);
-
+    
     // Banner section
     $bannerTitle = $data['banner_title'] ?? null;
     $bannerImage = $data['banner_image'] ?? null;
