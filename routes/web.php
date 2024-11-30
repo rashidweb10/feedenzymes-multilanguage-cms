@@ -40,6 +40,8 @@ Route::group(['prefix' => '{locale?}', 'middleware' => 'language', 'where' => ['
 
     Route::get('/', [IndexController::class, 'index'])->name('home');
     Route::get('/about-us', [IndexController::class, 'about'])->name('about');
+    Route::get('/careers', [IndexController::class, 'careers'])->name('careers');
+    Route::get('/contact-us', [IndexController::class, 'contact'])->name('contact');
 
     Route::get('/contact-us', function () {
         return view('frontend.pages.contact.index');

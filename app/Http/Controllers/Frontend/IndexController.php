@@ -22,5 +22,15 @@ class IndexController extends Controller
     function about(){
         $data = DB::table(getCurrentLocale()."_pages")->where("id", 2)->first();
         return view('frontend.pages.about.index', compact('data'));
+    } 
+    
+    function careers() {
+        $data = DB::table(getCurrentLocale()."_pages")->where("id", 3)->first();
+        return view('frontend.pages.careers.index', compact('data'));
+    }     
+
+    function contact(){
+        $data = DB::table(getCurrentLocale()."_pages")->where("id", 4)->first();
+        return view('frontend.pages.contact.index', compact('data'));
     }    
 }
