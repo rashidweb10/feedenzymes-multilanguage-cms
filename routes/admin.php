@@ -24,7 +24,7 @@ use App\Http\Controllers\Admin\ProductionController;
 */
 
 //clrearing application cache
-Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth']], function(){
+Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth','sql.prevent','xss.protect']], function(){
 
     Route::get('/clear-cache', function () {
         $exitCode = Artisan::call('cache:clear');
@@ -44,7 +44,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin.guest']], function(){
 
     Route::get('/login', [AuthController::class, 'index'])->name('admin.login'); //named a route
 
-    Route::post('/postLogin', [AuthController::class, 'postLogin']);   
+    Route::post('/postLogin', [AuthController::class, 'postLogin'])->middleware(['sql.prevent', 'xss.protect']);   
     
 });
 
@@ -54,33 +54,33 @@ Route::group(['prefix' => 'admin'], function(){
 });   
 
 //dashboard module
-Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth']], function(){ 
+Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth','sql.prevent','xss.protect']], function(){ 
     Route::post('/set-language', [LanguageController::class, 'setLanguage'])->name('admin.set.language');
 });
 
 //dashboard module
-Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth']], function(){ 
+Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth','sql.prevent','xss.protect']], function(){ 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');      
 });
 
 //setting module
-Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth']], function(){ 
+Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth','sql.prevent','xss.protect']], function(){ 
     Route::get('/settings', [SettingController::class, 'view'])->name('admin.settings'); 
     Route::post('/settings/update-setting-post', [SettingController::class, 'update']);     
 });
 
 //products categories module
-Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth']], function(){ 
+Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth','sql.prevent','xss.protect']], function(){ 
     Route::Resource('product-categories', ProductCategoryController::class);    
 });
 
 //products module
-Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth']], function(){ 
+Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth','sql.prevent','xss.protect']], function(){ 
     Route::Resource('products', ProductController::class);    
 });
 
 //enquiries module
-Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth']], function(){ 
+Route::group(['prefix' => 'admin', 'middleware' => ['admin.auth','sql.prevent','xss.protect']], function(){ 
     Route::Resource('enquiries', EnquiryController::class);    
 });
 

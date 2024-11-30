@@ -21,6 +21,7 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+        \App\Http\Middleware\RateLimitMiddleware::class,
     ];
 
     /**
@@ -67,5 +68,9 @@ class Kernel extends HttpKernel
         'admin.guest' => \App\Http\Middleware\AdminGuest::class, //added
         'language' => \App\Http\Middleware\LanguageMiddleware::class,
         'admin.check.language' => \App\Http\Middleware\CheckLanguage::class,
+        'sql.prevent' => \App\Http\Middleware\SQLInjectionMiddleware::class,
+        'xss.protect' => \App\Http\Middleware\XSSProtectionMiddleware::class,
+
+
     ];
 }
