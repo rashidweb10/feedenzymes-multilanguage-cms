@@ -17,11 +17,11 @@ class SettingSeeder extends Seeder
     {
         $insert = [
             [
-                'app_name'         => 'Feedenzymes',
+                'app_name'         => 'Starter Kit',
                 'app_logo'         => 'assets/admin/img/app/logo.png',
                 'timezone'         => 'Asia/Kolkata',
-                'author_name'      => 'Maptek Softwares',
-                'author_link'      => 'https://maptek.online/',
+                'author_name'      => 'Rashidweb',
+                'author_link'      => 'https://rashidweb.gnbags.in/',
                 'ui_mode'          => 'light',
                 'sidebar_collapse' => 'off',
                 'phone'            => '-',
