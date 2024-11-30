@@ -19,14 +19,14 @@
         <div class="col-md-6">
             <div class="dropdown">
                 <button class="btn btn-link btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://flagcdn.com/w20/{{ str_replace('ko', 'kr', str_replace('en', 'us', $currentLocale)) }}.png" alt="{{ $languages[$currentLocale] ?? 'English' }} Flag">
+                    <img src="{{ asset('assets/frontend/images/' . str_replace('ko', 'kr', str_replace('en', 'us', $currentLocale)) . '.png') }}" alt="{{ $languages[$currentLocale] ?? 'English' }} Flag">
                     <span id="selectedLanguage">{{ $languages[$currentLocale] ?? 'English' }}</span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="languageDropdown">
                     @foreach ($languages as $code => $language)
                         <li>
                             <a class="dropdown-item" href="{{ url($code) }}" data-value="{{ $code }}">
-                                <img src="https://flagcdn.com/w20/{{ str_replace('ko', 'kr', str_replace('en', 'us', $code)) }}.png" alt="{{ $language }} Flag"> {{ $language }}
+                                <img src="{{ asset('assets/frontend/images/' . str_replace('ko', 'kr', str_replace('en', 'us', $code)) . '.png') }}" alt="{{ $language }} Flag"> {{ $language }}
                             </a>
                         </li>
                     @endforeach

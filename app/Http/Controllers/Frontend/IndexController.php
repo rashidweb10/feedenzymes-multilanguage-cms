@@ -15,7 +15,7 @@ class IndexController extends Controller
 {
     function index(){
         $data = DB::table(getCurrentLocale()."_pages")->where("id", 1)->first();
-        $events = DB::table(getCurrentLocale()."_news")->where("status", "=", "active")->orderBy('series',"asc")->get();
+        $events = DB::table(getCurrentLocale()."_news")->where("created_at", ">=", now())->where("status", "=", "active")->orderBy('series',"asc")->get();
         return view('frontend.pages.home.index', compact('data','events'));
     }
 
@@ -37,9 +37,9 @@ class IndexController extends Controller
     function events(Request $requets, $lang, $type){
         //return $type;
         if($type == 'upcoming'){
-            $years = DB::table(getCurrentLocale()."_news")->select("year")->distinct("year")->where("created_at", ">=", now())->orderBy('year', 'desc')->pluck('year');
+            $years = DB::table(getCurrentLocale()."_news")->select("year")->distinct("year")->where("status", "=", "active")->where("created_at", ">=", now())->orderBy('year', 'desc')->pluck('year');
         }else{
-            $years = DB::table(getCurrentLocale()."_news")->select("year")->distinct("year")->orderBy('year', 'desc')->pluck('year');
+            $years = DB::table(getCurrentLocale()."_news")->select("year")->distinct("year")->where("status", "=", "active")->orderBy('year', 'desc')->pluck('year');
         }
         
         return view('frontend.pages.events.index', compact('years', 'type'));

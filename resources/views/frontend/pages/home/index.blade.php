@@ -148,7 +148,7 @@
             </div>
             <p class="pe-5">{!! $geventDescription !!}</p>
             <div class="read_more">
-              <a class="" href="#">{{ __('messages.more_events') }}</a>
+              <a class="" href="{{localized_route('events', ['type'=> 'global'])}}">{{ __('messages.more_events') }}</a>
             </div>
           </div>
           <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
