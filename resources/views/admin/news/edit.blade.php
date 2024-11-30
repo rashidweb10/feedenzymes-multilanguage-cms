@@ -1,6 +1,7 @@
 <form id="edit-news" action="{{route('news.update', $news->id)}}" method="POST">
     @csrf
     @method('PUT')
+    <input type="hidden" name="language" value="{{languageSession()}}">
     <div class="row">
         <div class="col-sm-12">
             <div class="form-group">
@@ -16,7 +17,7 @@
                 <input name="image" type="file" class="form-control" accept="image/*">
             </div>
         </div>
-        <div class="col-sm-12">
+        {{--<div class="col-sm-12">
             <div class="form-group">
                 <label>Year </label>
                 <select name="year" class="form-control" required>
@@ -26,7 +27,14 @@
                     @endforeach
                 </select> 
             </div>
-        </div>            
+        </div>--}}  
+        
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label>Event Start Date </label>
+                <input name="event_date" type="date" value="{{date('Y-m-d', strtotime($news->created_at))}}" class="form-control">
+            </div>
+        </div>        
         
         <div class="col-sm-12">
             <div class="form-group">

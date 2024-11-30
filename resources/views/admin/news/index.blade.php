@@ -27,12 +27,13 @@
                         <tr>
                             <th>Sr No</th>
                             <th>Year</th>
+                            <th width="20%">Event Start Date</th>
                             <th>Title</th>
                             <th>Image</th>
                             <th>Series</th>
                             <th>Status</th>
-                            <th>Created at</th>
-                            <th>Updated at</th>
+                            
+                            {{--<th>Updated at</th>--}}
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -41,6 +42,7 @@
                         <tr>
                             <td>{{ $index + 1 }}</td>
                             <td>{{$row->year}}</td>
+                            <td data-order="{{strtotime($row->created_at)}}">{{formatDate($row->created_at)}}</td>
                             <td>{{$row->name}}</td>
                             <td>
                                 <a target="_blank" href="{{asset($row->image)}}">
@@ -52,8 +54,7 @@
                             <td>
                                 <span class="badge @if($row->status == 'active') bg-success @else bg-danger @endif">{{ucfirst($row->status)}}</span>
                             </td>
-                            <td>{{formatDateTime($row->created_at)}}</td>
-                            <td>{{formatDateTime($row->updated_at)}}</td>
+                            {{--<td>{{formatDateTime($row->updated_at)}}</td>--}}
                             <td>
                                 <button onclick="smallModal('{{url(route('news.edit', $row->id))}}', 'Edit {{$row->name}}')"
                                     class="btn btn-sm btn-primary"><i class="fa-solid fa-pencil"></i> Edit</button>

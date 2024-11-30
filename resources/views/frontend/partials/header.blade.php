@@ -1,7 +1,14 @@
 @php
     $logo = DB::table('settings')->first()->app_logo;
     $currentLocale = getCurrentLocale(); // Get the current application locale
-    $languages = getLanguageList(); // Fetch the list of languages    
+    $languages = getLanguageList(); // Fetch the list of languages   
+    
+    $aboutMenu = DB::table(getCurrentLocale()."_pages")->where("id", 2)->first();
+    $aboutContents = json_decode($aboutMenu->contents);
+    $aboutTabsData = $aboutContents->tabs_data ?? [];
+
+    $careerMenu = DB::table(getCurrentLocale()."_pages")->where("id", 3)->first()->name;
+    $contactMenu = DB::table(getCurrentLocale()."_pages")->where("id", 4)->first()->name;
 @endphp
   <body>
     <div class="top_baar">
@@ -30,8 +37,8 @@
 			<div class="col-md-6">
 			     <div class="topmenu">
 				   <ul>
-				      <li><a href="">{{ __('messages.careers') }}</a></li>
-				      <li><a class="active" href="">{{ __('messages.contact_us') }}</a></li>
+				      <li><a class="{{ request()->segment(2) == 'careers' ? 'active' : '' }}" href="{{localized_route('careers')}}">{{ $careerMenu }}</a></li>
+				      <li><a class="{{ request()->segment(2) == 'contact-us' ? 'active' : '' }}" href="{{localized_route('contact')}}">{{ $contactMenu }}</a></li>
 				   </ul>
 				 </div>
 			</div>
@@ -45,7 +52,7 @@
         <nav class="navbar navbar-expand-lg navbar-light p-0">
           <div class="container-fluid">
             <div class="logo_width">
-              <a class="navbar-brand" href="index.php">
+              <a class="navbar-brand" href="{{url('')}}">
                 <img class="w-150" src="{{asset($logo)}}" />
               </a>
             </div>
@@ -59,41 +66,26 @@
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <span>{{ __('messages.company') }}</span> </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li>
-                        <a class="dropdown-item" href="#">
-                          <i class="fa-solid fa-caret-right"></i> {{ __('messages.about_us') }} </a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#">
-                          <i class="fa-solid fa-caret-right"></i> MRF </a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#">
-                          <i class="fa-solid fa-caret-right"></i> R&D </a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#">
-                          <i class="fa-solid fa-caret-right"></i> Technical Support </a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#">
-                          <i class="fa-solid fa-caret-right"></i> Sustainability </a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#">
-                          <i class="fa-solid fa-caret-right"></i> Quality </a>
-                      </li>
+                      @if(!empty($aboutTabsData))
+                        @foreach($aboutTabsData as $index => $row)
+                          <li>
+                            <a class="dropdown-item" href="{{localized_route('about')}}?tab={{$index}}">
+                              <i class="fa-solid fa-caret-right"></i> {{$row->tab_alias}} </a>
+                          </li>
+                        @endforeach
+                      @endif                      
+
                     </ul>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <span>{{ __('messages.products') }}</span> </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <li>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{localized_route('indivisual_enzymes')}}">
                           <i class="fa-solid fa-caret-right"></i> {{ __('messages.individual_enzymes') }}</a>
                       </li>
                       <li>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{localized_route('customized_enzymes')}}">
                           <i class="fa-solid fa-caret-right"></i> {{ __('messages.customized_enzymes') }}</a>
                       </li>
                      
@@ -103,11 +95,11 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> <span>{{ __('messages.events') }}</span> </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <li>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{localized_route('events', ['type'=> 'global'])}}">
                           <i class="fa-solid fa-caret-right"></i> {{ __('messages.global_events') }}</a>
                       </li>
                       <li>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{localized_route('events', ['type'=> 'upcoming'])}}">
                           <i class="fa-solid fa-caret-right"></i> {{ __('messages.upcoming_events') }}</a>
                       </li>
                      

@@ -11,18 +11,19 @@
 <form id="edit-page" action="{{route('pages.update', $page->id)}}" method="POST">
     @csrf
     @method('PUT')
+    <input type="hidden" name="language" value="{{languageSession()}}">
     <div class="row">
         <div class="col-md-12">
-           <h5 class="text-info">Banner Section</h5>
+           <h5 class="text-info">Primary Section</h5>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-12">
             <div class="form-group">
                 <label>Name</label>
-                <input readonly value="{{ $page->name }}" name="name" type="text" class="form-control" minlength="3"
+                <input value="{{ $page->name }}" name="name" type="text" class="form-control" minlength="3"
                     maxlength="50" required="">
             </div>
         </div>
-        <div class="col-sm-4">
+        {{--<div class="col-sm-4">
             <div class="form-group">
                 <label>Title</label>
                 <input value="{{$bannerTitle}}" name="banner_title" type="text" class="form-control" minlength="3"
@@ -40,10 +41,10 @@
         <div class="col-sm-12">
             <div class="form-group">
                 <label>Description</label>
-                <textarea name="banner_description" class="form-control text-editor" minlength="3"
-                     required="">{{$bannerDescription}}</textarea>
+                <textarea name="banner_description" class="form-control" minlength="3"
+                     required="" rows="4">{{$bannerDescription}}</textarea>
             </div>
-        </div>
+        </div>--}}
         <div class="col-md-12">
            <h5 class="text-info">About Section</h5>
         </div>
@@ -89,7 +90,7 @@
                                     placeholder="Title" required>
                             </div>
                             <div class="form-group col-md-3">
-                                <input name="tab_image[]" type="file" class="form-control" accept="image/*">
+                                <input name="tab_image[]" type="file" class="form-control" accept="image/*" @if(empty($row->tab_image)) required @endif> 
                                 <label class="mt-0 mb-0">@if(!empty($row->tab_image)) <a target="_blank" href="{{asset($row->tab_image)}}">View</a>
                                 @endif</label>
                                 <input value="{{$row->tab_image}}" name="old_tab_image[]" type="hidden">
@@ -116,7 +117,7 @@
                                 placeholder="Title" required>
                         </div>
                         <div class="form-group col-md-3">
-                            <input name="tab_image[]" type="file" class="form-control" accept="image/*">
+                            <input name="tab_image[]" type="file" class="form-control" accept="image/*" required>
                             <input value="" name="old_tab_image[]" type="hidden">
                         </div>                       
                         <div class="form-group col-md-3">
@@ -130,8 +131,10 @@
                     </div>
                     @endif
                 </div>
-                <button type="button" class="btn btn-sm btn-success mt-2" id="add-tab"><i class="fa fa-plus"
+                <div class="text-right">
+                    <button type="button" class="btn btn-sm btn-success mt-2" id="add-tab"><i class="fa fa-plus"
                         aria-hidden="true"></i> Add More</button>
+                </div>
             </div>
         </div>
         <div class="col-sm-12">

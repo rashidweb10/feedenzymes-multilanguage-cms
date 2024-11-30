@@ -30,8 +30,10 @@
 <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
 
 <!-- tinymce JS -->
-<script src="https://cdn.tiny.cloud/1/oao7dvt6bwvrchihs4fuxq9hs7cx1gad1ogh6zjhouovy9ub/tinymce/7.2.1-75/tinymce.min.js">
-</script>
+<!-- <script src="https://cdn.tiny.cloud/1/oao7dvt6bwvrchihs4fuxq9hs7cx1gad1ogh6zjhouovy9ub/tinymce/7.2.1-75/tinymce.min.js">
+</script> -->
+
+<script type="text/javascript" id="tinymce-js" src="https://mcrm.nexgeno.in/assets/plugins/tinymce/tinymce.min.js?v=3.0.5"></script>
 
 
 <!-- AdminLTE App -->
@@ -259,3 +261,32 @@ function initTextEditor() {
 
 </script>
 <!--Summernote Scripts End-->
+
+<script>
+    // Set the key name for localStorage
+    const sessionKey = 'site-open';
+
+    // Function to check if the site is already open in another tab
+    function checkTabOpen() {
+        // If the session key exists in localStorage
+        if (localStorage.getItem(sessionKey)) {
+            // If it does, alert the user
+            document.write("<h2>This site is already open in another tab. Please use the existing tab.</h2>");
+            alert("This site is already open in another tab. Please use the existing tab.");
+            // Close the current tab
+            window.close();
+        } else {
+            // Otherwise, set the session key to mark the site as open
+            localStorage.setItem(sessionKey, 'true');
+
+            // When the tab is closed or refreshed, remove the session key
+            window.onbeforeunload = function() {
+                localStorage.removeItem(sessionKey);
+            };
+        }
+    }
+
+    // Run the check when the page is loaded
+    window.onload = checkTabOpen;
+</script>
+

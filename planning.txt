@@ -83,7 +83,7 @@ Application setup - 2 Hours
 Deployment & Testing - 5 Hours
 2 Admins for 2 websites with switch - 4 Hours
 
-Backend (26 Hours)
+Backend (26 Hours) - COMPLETE
     Dashboard - 2 Hours
     Pages Management (Home, About, Career, Contact) - 12 Hours (4 Pages)
     News Management - 4 Hours

@@ -186,6 +186,7 @@ class PageController extends Controller
                 'p3_data' => $p3_data,       
             ];
             $page->contents = json_encode($contents);
+            $page->name = $request->name;
             $page->save(); 
                          
         }elseif($id == 2){
@@ -234,6 +235,7 @@ class PageController extends Controller
             ];
 
             $page->contents = json_encode($contents);
+            $page->name = $request->name;
             $page->save();           
 
         }elseif($id == 3){ 
@@ -251,6 +253,7 @@ class PageController extends Controller
                 'page_description' => $request->page_description,         
             ];
             $page->contents = json_encode($contents);
+            $page->name = $request->name;
             $page->save();  
 
         }elseif($id == 4){ 
@@ -268,6 +271,24 @@ class PageController extends Controller
                 'page_description' => $request->page_description,          
             ];
             $page->contents = json_encode($contents);
+            $page->name = $request->name;
+            $page->save(); 
+
+        }elseif($id == 5){ 
+            $page = Page::findOrFail($id);
+            if ($request->hasFile('banner_image')) {
+                $path = $request->file('banner_image')->store('uploads/'.languageSession(), 'public');
+                $banner_image = '/storage/' . $path;
+            }else{
+                $banner_image = $request->old_banner_image;
+            }            
+            $contents = [
+                'banner_title' => $request->banner_title,
+                'banner_image' => $banner_image,
+                'banner_description' => $request->banner_description,           
+            ];
+            $page->contents = json_encode($contents);
+            $page->name = $request->name;
             $page->save(); 
 
         }

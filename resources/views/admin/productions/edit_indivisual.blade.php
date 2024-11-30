@@ -1,5 +1,8 @@
 @php
     $content = json_decode($production->contents);
+    $nsp_title = $content->nsp_title ?? null;   
+    $digestive_title = $content->digestive_title ?? null;   
+    $phytase_title = $content->phytase_title ?? null;   
     $nspEnzymes = $content->nspEnzymes ?? [];   
     $digestiveEnzymes = $content->digestiveEnzymes ?? [];   
     $phytaseEnzymes = $content->phytaseEnzymes ?? [];   
@@ -8,10 +11,18 @@
 <form id="edit" action="{{route('the-products.update', $production->id)}}" method="POST">
     @csrf
     @method('PUT')
+    <input type="hidden" name="language" value="{{languageSession()}}">
     <div class="row">        
         <div class="col-md-12">
            <h5 class="text-info">NSP enzymes</h5>
-        </div>        
+        </div>   
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label>Title</label>
+                <input value="{{$nsp_title}}" name="nsp_title" type="text" class="form-control" minlength="3"
+                    maxlength="255" required="">
+            </div>
+        </div>             
         <div class="col-sm-12">
             <div class="form-group">
                 <div id="p1-container">
@@ -71,6 +82,13 @@
         </div> 
         <div class="col-sm-12">
             <div class="form-group">
+                <label>Title</label>
+                <input value="{{$digestive_title}}" name="digestive_title" type="text" class="form-control" minlength="3"
+                    maxlength="255" required="">
+            </div>
+        </div>         
+        <div class="col-sm-12">
+            <div class="form-group">
                 <div id="p2-container">
                     @if(isset($digestiveEnzymes) && !empty($digestiveEnzymes))
                     @foreach($digestiveEnzymes as $index => $row)
@@ -125,6 +143,13 @@
         <div class="col-md-12">
            <h5 class="text-info mt-3">Phytase Enzymes</h5>
         </div> 
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label>Title</label>
+                <input value="{{$phytase_title}}" name="phytase_title" type="text" class="form-control" minlength="3"
+                    maxlength="255" required="">
+            </div>
+        </div>        
         <div class="col-sm-12">
             <div class="form-group">
                 <div id="p3-container">

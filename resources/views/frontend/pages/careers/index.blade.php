@@ -1,6 +1,7 @@
 @extends('frontend.layouts.master')
-@section('title', 'Contact')
+@section('title', 'Career')
 @section('content')
+
 @php
     $contents = json_decode($data->contents); // Assuming $page contains the database data
     $page_name = $data->name ?? '';

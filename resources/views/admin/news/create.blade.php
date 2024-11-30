@@ -1,5 +1,6 @@
 <form id="create-page" action="{{route('news.store')}}" method="POST">
     @csrf
+    <input type="hidden" name="language" value="{{languageSession()}}">
     <div class="row">
         <div class="col-sm-12">
             <div class="form-group">
@@ -14,7 +15,7 @@
                 <input name="image" type="file" class="form-control" accept="image/*" required>
             </div>
         </div>
-        <div class="col-sm-12">
+        {{--<div class="col-sm-12">
             <div class="form-group">
                 <label>Year </label>
                 <select name="year" class="form-control" required>
@@ -24,7 +25,15 @@
                     @endforeach
                 </select> 
             </div>
-        </div>             
+        </div>--}}  
+        
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label>Event Start Date </label>
+                <input name="event_date" type="date" value="" class="form-control">
+            </div>
+        </div>        
+
         <div class="col-sm-12">
             <div class="form-group">
                 <label>Priority </label>

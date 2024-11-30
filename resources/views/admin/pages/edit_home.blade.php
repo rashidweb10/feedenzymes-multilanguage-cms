@@ -15,25 +15,26 @@
 <form id="edit-page" action="{{route('pages.update', $page->id)}}" method="POST">
     @csrf
     @method('PUT')
+    <input type="hidden" name="language" value="{{languageSession()}}">
     <div class="row">
         <div class="col-md-12">
            <h5 class="text-info mt-3">Banner Section</h5>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-6">
             <div class="form-group">
                 <label>Name</label>
-                <input readonly value="{{ $page->name }}" name="name" type="text" class="form-control" minlength="3"
+                <input value="{{ $page->name }}" name="name" type="text" class="form-control" minlength="3"
                     maxlength="50" required="">
             </div>
         </div>
-        <div class="col-sm-4">
+        {{--<div class="col-sm-4">
             <div class="form-group">
                 <label>Title</label>
                 <input value="{{$bannerTitle}}" name="banner_title" type="text" class="form-control" minlength="3"
                     maxlength="255" required="">
             </div>
-        </div>
-        <div class="col-sm-4">
+        </div>--}}
+        <div class="col-sm-6">
             <div class="form-group">
                 <label>Video @if(!empty($bannerImage)) <a target="_blank" href="{{asset($bannerImage)}}">View</a>
                     @endif</label>
