@@ -16,6 +16,16 @@
     <input type="hidden" name="language" value="{{languageSession()}}">
     <div class="row">
         <div class="col-md-12">
+           <h5 class="text-info">Primary Section</h5>
+        </div>       
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label>Name</label>
+                <input value="{{ $production->name }}" name="name" type="text" class="form-control" minlength="3"
+                    maxlength="50" required="">
+            </div>
+        </div>         
+        <div class="col-md-12">
            <h5 class="text-info">Why Customize?</h5>
         </div>        
         <div class="col-sm-6">

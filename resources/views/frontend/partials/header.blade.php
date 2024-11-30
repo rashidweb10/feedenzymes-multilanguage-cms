@@ -9,6 +9,9 @@
 
     $careerMenu = DB::table(getCurrentLocale()."_pages")->where("id", 3)->first()->name;
     $contactMenu = DB::table(getCurrentLocale()."_pages")->where("id", 4)->first()->name;
+
+    $customEnzMenu = DB::table(getCurrentLocale()."_productions")->where("id", 1)->first()->name;
+    $indivisualEnzMenu = DB::table(getCurrentLocale()."_productions")->where("id", 2)->first()->name;
 @endphp
   <body>
     <div class="top_baar">
@@ -82,11 +85,11 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <li>
                         <a class="dropdown-item" href="{{localized_route('indivisual_enzymes')}}">
-                          <i class="fa-solid fa-caret-right"></i> {{ __('messages.individual_enzymes') }}</a>
+                          <i class="fa-solid fa-caret-right"></i> {{ $indivisualEnzMenu }}</a>
                       </li>
                       <li>
                         <a class="dropdown-item" href="{{localized_route('customized_enzymes')}}">
-                          <i class="fa-solid fa-caret-right"></i> {{ __('messages.customized_enzymes') }}</a>
+                          <i class="fa-solid fa-caret-right"></i> {{ $customEnzMenu }}</a>
                       </li>
                      
                     </ul>

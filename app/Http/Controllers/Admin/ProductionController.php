@@ -66,6 +66,7 @@ class ProductionController extends Controller
                 'you_description' => $request->you_description,                      
             ];
             $production->contents = json_encode($contents);
+            $production->name = $request->name;
             $production->save();            
         }else{
             $p1_data = [];
@@ -108,6 +109,7 @@ class ProductionController extends Controller
             ];
 
             $production->contents = json_encode($contents);
+            $production->name = $request->name;
             $production->save();
         }
     
