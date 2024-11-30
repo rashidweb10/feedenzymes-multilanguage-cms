@@ -99,8 +99,11 @@ class ProductionController extends Controller
             endforeach;        
 
             $contents = [
-                'nspEnzymes' => $p1_data,        
-                'digestiveEnzymes' => $p2_data,       
+                'nsp_title' => $request->nsp_title, 
+                'nspEnzymes' => $p1_data, 
+                'digestive_title' => $request->digestive_title,       
+                'digestiveEnzymes' => $p2_data,  
+                'phytase_title' => $request->phytase_title,     
                 'phytaseEnzymes' => $p3_data         
             ];
 

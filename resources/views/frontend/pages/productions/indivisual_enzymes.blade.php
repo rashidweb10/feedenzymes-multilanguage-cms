@@ -6,7 +6,10 @@
     $contents = json_decode($data->contents);  // Decode as an object (default behavior)
     $nspEnzymes = $contents->nspEnzymes ?? [];
     $digestiveEnzymes = $contents->digestiveEnzymes ?? [];
-    $phytaseEnzymes = $contents->phytaseEnzymes ?? [];   
+    $phytaseEnzymes = $contents->phytaseEnzymes ?? []; 
+    $nsp_title = $contents->nsp_title ?? null;   
+    $digestive_title = $contents->digestive_title ?? null;   
+    $phytase_title = $contents->phytase_title ?? null;       
 
 @endphp
 
@@ -19,7 +22,7 @@
       <div class="col-md-12 order-1 order-md-2 aos-init aos-animate" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
         <div class="">
           
-          <h4>NSP Enzymes !!!</h4>
+          <h4>{{$nsp_title}}</h4>
           <div class="accordion" id="accordionEnzymeList">
             @foreach($nspEnzymes as $item)
                 @if($item->p1_status == 'active')
@@ -39,7 +42,7 @@
             @endforeach
           </div>
 
-          <h4 class="mt-3">Digestive enzymes !!!</h4>
+          <h4 class="mt-3">{{$digestive_title}}</h4>
             <div class="accordion" id="accordionEnzymeList">
               @foreach($digestiveEnzymes as $item)
                   @if($item->p2_status == 'active')
@@ -59,7 +62,7 @@
               @endforeach
             </div> 
             
-            <h4 class="mt-3">Phytase enzymes !!!</h4>
+            <h4 class="mt-3">{{$phytase_title}}</h4>
             <div class="accordion" id="accordionEnzymeList">
               @foreach($phytaseEnzymes as $item)
                   @if($item->p3_status == 'active')
