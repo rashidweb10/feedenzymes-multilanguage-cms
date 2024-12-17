@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use HTMLPurifier;
-//use HTMLPurifier_Config;
+use HTMLPurifier_Config;
 
 class XSSProtectionMiddleware
 {
