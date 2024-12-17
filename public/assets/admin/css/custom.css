@@ -1,0 +1,42 @@
+
+body 
+{
+    font-size: 14px;
+    font-family: poppins;
+    font-weight: 400;
+}
+
+.layout-navbar-fixed .wrapper .sidebar-dark-primary .brand-link:not([class*=navbar]) 
+{
+    background-color: #1a1a27;
+}
+
+[class*=sidebar-dark-] 
+{
+    background-color: #141423;
+}
+
+.content-wrapper 
+{
+    background-color: #f2f3f8;
+}
+
+[class*=sidebar-dark] .btn-sidebar, [class*=sidebar-dark] .form-control-sidebar {
+    background-color: rgba(143, 151, 171, 0.15);
+    border: 1px solid rgba(143, 151, 171, 0.15);
+}
+
+p, li {
+    font-size: 14px;
+}
+
+#toast-container>div {
+    opacity:1;
+    box-shadow: none;
+}
+
+#toast-container>div:hover {
+    -moz-box-shadow: 0 0 7px #00000061;
+    -webkit-box-shadow: 0 0 7px #00000061;
+    box-shadow: 0 0 7px #00000061;
+}
