@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\IndexController;
+use App\Http\Controllers\SwitchLoginController;
 use Illuminate\Support\Facades\Artisan;
 
 /*
@@ -14,6 +15,10 @@ use Illuminate\Support\Facades\Artisan;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+/*Switch Logins*/
+Route::get('/switch-login', [SwitchLoginController::class, 'switchLogin']);
+/*Switch Logins*/
 
 Route::get('/optimize-clear', function () {
     Artisan::call('optimize:clear');

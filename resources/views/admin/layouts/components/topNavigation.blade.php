@@ -14,7 +14,16 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
+
+    <form action="{{ url('/api/switch-login') }}" method="POST">
+        @csrf
+        <input type="hidden" name="target_app" value="App B">
+        <input type="hidden" name="token" value="{{ generateToken() }}">
+        <button type="submit">Switch to App B</button>
+    </form>    
+
     <a style="padding-top: 7px;margin-right: 10px;" class="btn btn-sm btn-outline-primary" target="_blank" href="{{url(session('language', 'en'))}}">Visit Website</a>
+    
     <form action="{{ route('admin.set.language') }}" method="post" id="language-form">
       @csrf
       <select class="form-control" id="language-selector" name="language" onchange="this.form.submit()">
