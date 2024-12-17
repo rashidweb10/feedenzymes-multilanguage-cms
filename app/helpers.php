@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\App;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 if (!function_exists('languageSession')) {
     function languageSession() {
@@ -73,5 +74,18 @@ if (!function_exists('localized_route')) {
 
         // Generate the route
         return route($name, $parameters, $absolute);
+    }
+}
+
+if (!function_exists('generateToken')) {
+    function generateToken()
+    {
+        $user = auth('admins')->user();
+        if (!$user) {
+            throw new \Exception('No authenticated user found for token generation');
+        }
+
+        $token = JWTAuth::fromUser($user);
+        return $token;
     }
 }
