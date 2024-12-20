@@ -57,10 +57,10 @@
             <span class="about_heading robot_slab">{{ __('messages.welcome_message') }}</span>
           </div>
           @if(!empty($p1Data))
-          @foreach($p1Data as $row)
+          @foreach($p1Data as $key => $row)
           <div class="col-lg-4" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
             <div class="about_box pt-5">
-              <a href="/"><h4 class="robot_slab fw-normal fs-4 pb-2">{{$row['p1_title']}}</h4>
+              <a href="{{localized_route('about')}}?tab={{$key}}"><h4 class="robot_slab fw-normal fs-4 pb-2">{{$row['p1_title']}}</h4>
               <div class="about_img zoom-hover">
                 <img class="w-100" src="{{asset($row['p1_image'])}}" alt="img" />
               </div>

@@ -15,22 +15,22 @@ class SwitchLoginController extends Controller
     
         try {
             // Decode and authenticate the user
-            $user = JWTAuth::setToken($token)->authenticate();
-    
-            if (!$user) {
-                return response()->json(['error' => 'Invalid token'], 401);
-            }
+            //$user = JWTAuth::setToken($token)->authenticate();
+            // if (!$user) {
+            //     return response()->json(['error' => 'Invalid token'], 401);
+            // }
     
             // Determine target application
             $targetApp = $request->input('target_app'); // 'App B' or 'App A'
             $targetUrl = $targetApp === 'App B' 
-                ? 'https://app-b.com/switch-login' 
+                ? 'http://enzimas.maptek.online/switch-login' 
                 : 'https://app-a.com/switch-login';
     
             // Return redirection URL
-            return response()->json([
-                'redirect_url' => $targetUrl . '?token=' . $token,
-            ]);
+            // return response()->json([
+            //     'redirect_url' => $targetUrl . '?token=' . $token,
+            // ]);
+            return redirect($targetUrl . '?token=' . $token);
         } catch (\Tymon\JWTAuth\Exceptions\TokenInvalidException $e) {
             return response()->json(['error' => 'Invalid token'], 401);
         } catch (\Tymon\JWTAuth\Exceptions\TokenExpiredException $e) {
